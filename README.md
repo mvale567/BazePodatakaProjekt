@@ -8,7 +8,7 @@ Izvješće o projektu: Sustav upravljanja hotelom
 	- Marko Valečić
 
 2. Uvod
-U ovom izvješću opisujemo diskusiju i rezultat timskog projekta: Sustav upravljanja hotelom. Cilj projekta je osmisliti i realizirati bazu podataka koja će omogućiti uspješno i efikasno poslovanje jednog hotela ili više njih.
+        U ovom izvješću opisujemo diskusiju i rezultat timskog projekta: Sustav upravljanja hotelom. Cilj projekta je osmisliti i realizirati bazu podataka koja će omogućiti uspješno i efikasno poslovanje jednog hotela ili više njih.
 
 3. Opis sastanka
 Projekt se sastoji od sljedećih zadataka obrađenih na timskom sastanku:
