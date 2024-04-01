@@ -2,7 +2,7 @@ Izvješće o projektu: Sustav upravljanja hotelom
 
 1. Tim 5:
 - Iva Batur
-	- Lea Baletić
+	- Lea Beletić
 	- Tanja Gattin-Zebić
 	- Marta Kralj
 	- Marko Valečić
@@ -39,4 +39,3 @@ Link: https://github.com/V-DevCode/BazePodatakaProjekt
 6. Opis relacijskog modela
 
 Razvijamo relacijski model bez podataka za upravljanje hotelskim uslugama. U hotelu rade zaposlenici koji su podijeljeni po radnim pozicijama koje uključuju naziv pozicije i plaću, te njihovo radno vrijeme, odnosno naziv smjene, početak smjene i kraj smjene. Za svakog zaposlenika pratimo ime, prezime, telefon i spol. Prije samog dolaska, gosti sami odlučuju kako će rezervirati svoj smještaj, te za svaki odabir evidentiramo naziv, web, OIB i dodatni popust. Nakon toga upisujemo podatke za gosta koji rezervira smještaj, a to su ime, prezime, adresa, država, telefon i mail. Kada smo spremili sve podatke o korisniku, na red dolazi odabir smještaja. Nudimo razne vrste smještaja, od osnovnih do ekskluzivnih koji uključuju razne dodatke smještaja. Za svaki naš smještaj znamo broj ležećih mjesta, te prema tome našim gostima možemo brzo i jednostavno dodijeliti smještaj. Sada imamo sve spremno pa možemo naše podatke spremiti pod stavku rezervacija za koju pratimo datum prijave, datum odjave, broj gostiju, zaposlenika koji je rezervaciju napravio, te kako je smještaj rezerviran. Ukoliko tijekom boravka gost želi dodatne usluge, ni to nije problem, jer i za to vodimo evidenciju. Na samom kraju boravka korisniku izdajemo račun na kojem jasno piše broj računa, datum, vrijeme, vrsta plaćanja te ukupan iznos.
- 
