@@ -1,5 +1,6 @@
 USE hotel;
 
+-- 10.Tablica raspored_ciscenja --
 INSERT INTO raspored_ciscenja (datum, stanje)
 VALUES 
     ('2023-05-01', 'Završeno'),
@@ -32,7 +33,8 @@ VALUES
     ('2023-05-28', 'Planirano'),
     ('2023-05-29', 'U tijeku'),
     ('2023-05-30', 'Završeno');
-    
+
+-- 7.Tablica radno_mjesto --
 INSERT INTO radno_mjesto (naziv, opis, odjel)
 VALUES 
     ('Čistač', 'Čišćenje prostorija', 'Odjel A'),
@@ -41,7 +43,8 @@ VALUES
     ('Sobarica', 'Održavanje čistoće soba', 'Odjel čistoće'),
     ('Administrator', 'Upravljanje sustavom', 'Uprava'),
     ('Vodoinstalater', 'Popravak vodovodnih instalacija', 'Održavanje');
-    
+
+-- 1.Tablica radnik--
 INSERT INTO radnik (ime, prezime, odjel, telefon, email, datum_zaposlenja, id_radno_mjesto, id_raspored_ciscenja)
 VALUES 
     ('Ivan', 'Horvat', 'Odjel A', '0123456789', 'ivan.horvat@example.com', '2023-01-15', 1, 1),
@@ -49,7 +52,8 @@ VALUES
     ('Marko', 'Marić', 'Restoran', '0912345678', 'marko.maric@example.com', '2023-03-10', 3, 3),
     ('Ana', 'Kovač', 'Odjel čistoće', '0956789012', 'ana.kovac@example.com', '2023-04-05', 4, 4),
     ('Matej', 'Novak', 'Uprava', '0923456789', 'matej.novak@example.com', '2023-05-15', 5, 5);
-    
+
+-- 2.Tablica gost --
 INSERT INTO gost (ime, prezime, datum_rodenja, adresa, telefon, email)
 VALUES 
     ('Ana', 'Kovač', '1985-03-25', 'Ulica 1, Grad', '0912345678', 'ana.kovac@example.com'),
@@ -57,7 +61,8 @@ VALUES
     ('Petra', 'Kovačević', '1990-11-03', 'Prolaz 3, Grad', '0956789012', 'petra.kovacevic@example.com'),
     ('Marko', 'Horvat', '1982-09-18', 'Avenija 4, Grad', '0923456789', 'marko.horvat@example.com'),
     ('Lucija', 'Marić', '1995-05-12', 'Ulica 5, Grad', '0912345678', 'lucija.maric@example.com');
-    
+
+-- 3.Tablica skaldiste--
 INSERT INTO skladiste (odjel, naziv_proizvoda, kolicina_proizvoda)
 VALUES 
     ('Higijenske potrebstine', 'Toaletni papir', 200),
@@ -79,7 +84,10 @@ VALUES
     ('Hrana', 'Povrće', 150),
     ('Piće', 'Kava', 180);
 
-INSERT INTO soba_sadrzaj (id_soba, id_sadrzaj, kolicina) VALUES
+
+-- 14.Tablica koja povezuje soba-sadrzaj, rezultat odnosa "vise-na-vise" --
+INSERT INTO soba_sadrzaj (id_soba, id_sadrzaj, kolicina) 
+VALUES
 (1, 1, 2),
 (1, 2, 1),
 (2, 3, 3),
@@ -111,8 +119,9 @@ INSERT INTO soba_sadrzaj (id_soba, id_sadrzaj, kolicina) VALUES
 (15, 29, 2),
 (15, 30, 1);
 
-
-INSERT INTO racun (datum, iznos) VALUES
+-- 15.Tablica racun --
+INSERT INTO racun (datum, iznos) 
+VALUES
 ('2024-01-01', 150.00),
 ('2024-01-02', 200.00),
 ('2024-01-03', 250.00),
@@ -144,8 +153,9 @@ INSERT INTO racun (datum, iznos) VALUES
 ('2024-01-29', 1550.00),
 ('2024-01-30', 1600.00);
 
-
-INSERT INTO rezervacija (datum_prijave, datum_odjave, broj_gostiju, id_gost, id_radnik, id_racun) VALUES
+-- 16.Tablica rezervacija --
+INSERT INTO rezervacija (datum_prijave, datum_odjave, broj_gostiju, id_gost, id_radnik, id_racun)
+VALUES
 ('2024-01-01', '2024-01-05', 2, 1, 1, 1),
 ('2024-01-02', '2024-01-06', 1, 2, 2, 2),
 ('2024-01-03', '2024-01-07', 3, 3, 3, 3),
@@ -177,8 +187,9 @@ INSERT INTO rezervacija (datum_prijave, datum_odjave, broj_gostiju, id_gost, id_
 ('2024-01-29', '2024-02-02', 2, 14, 29, 29),
 ('2024-01-30', '2024-02-03', 3, 15, 30, 30);
 
-
-INSERT INTO recenzija (datum, ocjena, komentar, id_gost, id_rezervacija) VALUES
+-- 17.Tablica recenzija --
+INSERT INTO recenzija (datum, ocjena, komentar, id_gost, id_rezervacija)
+VALUES
 ('2024-01-01', '4', 'Odličan boravak, sve je bilo čisto i uredno.', 1, 1),
 ('2024-01-01', '5', 'Fantastično iskustvo! Sve pohvale osoblju.', 2, 2),
 ('2024-01-03', '3', 'Soba je bila prilično bučna, ali inače sve ok.', 3, 3),
@@ -210,8 +221,9 @@ INSERT INTO recenzija (datum, ocjena, komentar, id_gost, id_rezervacija) VALUES
 ('2024-05-25', '5', 'Savršen smještaj za odmor, definitivno se vraćamo.', 14, 29),
 ('2024-05-26', '4', 'Vrlo čisto i uredno, osoblje vrlo ljubazno.', 15, 30);
 
-
-INSERT INTO usluge (naziv, opis, cijena) VALUES
+-- 18.Tablica usluge --
+INSERT INTO usluge (naziv, opis, cijena) 
+VALUES
 ('Doručak', 'Standardni doručak s raznovrsnim izborom.', 15.00),
 ('Ručak', 'Ručak s dnevnim jelovnikom.', 20.00),
 ('Večera', 'Večera s bogatim izborom jela.', 25.00),
@@ -242,8 +254,9 @@ INSERT INTO usluge (naziv, opis, cijena) VALUES
 ('Poslovni kutak', 'Poslovni kutak s računalom i printerom.', 10.00),
 ('Sef u sobi', 'Sef za sigurno čuvanje vrijednih predmeta.', 5.00);
 
-
-INSERT INTO racun_usluge (id_racun, id_usluga, kolicina) VALUES
+-- 19.Tablica koja povezuje racun-usluge, rezultat odnosa "vise-na-vise" --
+INSERT INTO racun_usluge (id_racun, id_usluga, kolicina)
+VALUES
 (1, 1, 2),
 (1, 2, 1),
 (2, 3, 3),
@@ -275,8 +288,9 @@ INSERT INTO racun_usluge (id_racun, id_usluga, kolicina) VALUES
 (15, 29, 2),
 (15, 30, 1);
 
-
-INSERT INTO vrsta_placanja (nacin_placanja) VALUES
+-- 20.Tablica vrsta_placanja --
+INSERT INTO vrsta_placanja (nacin_placanja) 
+VALUES
 ('Gotovina'),
 ('Kreditna kartica'),
 ('Debitna kartica'),
@@ -309,8 +323,9 @@ INSERT INTO vrsta_placanja (nacin_placanja) VALUES
 ('Kreditna kartica'),
 ('Debitna kartica');
 
-
-INSERT INTO restoran (ime, tip, lokacija, radno_vrijeme) VALUES
+-- 21.Tablica restoran --
+INSERT INTO restoran (ime, tip, lokacija, radno_vrijeme)
+VALUES
 ('Restoran Aroma', 'Restoran', 'Vukovarska ul. 207, 10000 Zagreb', '08:00 - 22:00'),
 ('Restoran Mundoaka', 'Restoran', 'Petrinjska ul. 2, 10000 Zagreb', '09:00 - 23:00'),
 ('Bistro Fajn', 'Bistro', 'Vlaška ul. 78, 10000 Zagreb', '07:00 - 21:00'),
@@ -341,8 +356,9 @@ INSERT INTO restoran (ime, tip, lokacija, radno_vrijeme) VALUES
 ('Zlatna Školjka', 'Restoran', 'Medulićeva ul. 19, 10000 Zagreb', '08:00 - 21:00'),
 ('Gostionica Medvedgrad', 'Gostionica', 'Ilica ul. 49, 10000 Zagreb', '08:30 - 22:30');
 
-
-INSERT INTO racun_restoran (datum, cijena, id_restoran) VALUES
+-- 22.Tablica koja povezuje racun-restoran, rezultat odnosa "vise-na-vise" --
+INSERT INTO racun_restoran (datum, cijena, id_restoran) 
+VALUES
 ('2024-01-01', 120.50, 1),
 ('2024-01-02', 95.25, 2),
 ('2024-01-03', 150.75, 3),
@@ -374,8 +390,9 @@ INSERT INTO racun_restoran (datum, cijena, id_restoran) VALUES
 ('2024-01-29', 180.00, 29),
 ('2024-01-30', 95.30, 30);
 
-
-INSERT INTO gost_restoran (id_gost, id_restoran, stanje) VALUES
+-- 23.Tablica koja povezuje gost-restoran, rezultat odnosa "vise-na-vise" --
+INSERT INTO gost_restoran (id_gost, id_restoran, stanje) 
+VALUES
 (1, 1, 'Aktivan'),
 (2, 2, 'Aktivan'),
 (3, 3, 'Aktivan'),
@@ -407,7 +424,7 @@ INSERT INTO gost_restoran (id_gost, id_restoran, stanje) VALUES
 (14, 29, 'Neaktivan'),
 (15, 30, 'Aktivan');
 
-
+-- 24.Tablica koja racun-vrsta_placanja, rezultat odnosa "vise-na-vise" --
 INSERT INTO racun_vrsta_placanja (id_racun, id_placanje)
 VALUES
 (1, 1),
