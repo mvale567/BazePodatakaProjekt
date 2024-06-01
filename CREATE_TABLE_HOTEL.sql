@@ -318,5 +318,44 @@ CREATE TABLE racun_vrsta_placanja (
 INSERT INTO racun_vrsta_placanja (id_racun, id_placanje)
     VALUES (1, 1);
     
-    
+    -- UPITI
+
+-- UPIT 1
+CREATE VIEW kontakt_dobavljaci AS
+SELECT d.naziv, d.email, s.naziv AS naziv_robe
+FROM dobavljac AS d
+JOIN skladiste AS s ON d.id_dobavljac = s.id_skladiste
+WHERE s.naziv LIKE 'Toneri%';
+
+CREATE VIEW provjera_stanja AS
+SELECT r.ime, r.prezime, rs.napomena
+FROM radnik AS r
+JOIN radnik_skladiste AS rs ON r.id_radnik = rs.id_radnik
+WHERE rs.napomena LIKE '%toner%';
+
+SELECT CONCAT(ps.ime, " ", ps.prezime) AS narucitelj, kd.naziv AS naziv_dobavljaca, kd.email, kd.naziv_robe
+FROM provjera_stanja AS ps
+CROSS JOIN kontakt_dobavljaci AS kd;
+-- KRAJ UPITA 1
+
+-- UPIT 2
+CREATE VIEW preostali_radnici AS
+SELECT *
+FROM radnik
+WHERE ime NOT LIKE 'Lidija' AND prezime NOT LIKE 'Perić' AND id=28
+
+SELECT id_radnik
+FROM radnik
+WHERE ime LIKE 'Lidija' AND prezime LIKE 'Perić';
+-- KRAJ UPITA 2
+
+-- UPIT 3
+CREATE VIEW racun_Ana_Anković AS
+SELECT CONCAT(g.ime, " ", g.prezime) AS platitelj, s.broj_sobe, s.cijena_nocenja, DATEDIFF(rez.datum_odjave, rez.datum_prijave) AS broj_dana, s.cijena_nocenja*DATEDIFF(rez.datum_odjave, rez.datum_prijave)  AS ukupno 
+FROM rezervacija AS rez
+JOIN gost AS g ON rez.id_rezervacija=g.id_gost
+CROSS JOIN soba AS s 
+WHERE g.ime LIKE 'Ana' AND g.prezime LIKE 'Anković' AND s.id_soba=3;
+--KRAJ UPITA 3
+
 
