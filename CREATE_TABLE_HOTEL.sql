@@ -18,17 +18,6 @@ CREATE TABLE raspored_ciscenja (
 INSERT INTO raspored_ciscenja (datum, stanje)
     VALUES ('2023-05-01', 'Završeno');
 
--- 7.Tablica radno_mjesto --
-CREATE TABLE radno_mjesto (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    naziv VARCHAR(100) NOT NULL,
-    opis TEXT,
-    odjel VARCHAR(50) NOT NULL
-);
- INSERT INTO radno_mjesto (naziv, opis, odjel)
-    VALUES ('Čistač', 'Čišćenje prostorija', 'Odjel A');
-
-
 -- 1.Tablica radnik--
 CREATE TABLE radnik (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -234,7 +223,7 @@ CREATE TABLE recenzija (
     FOREIGN KEY (id_rezervacija) REFERENCES rezervacija(id)
 );
 INSERT INTO recenzija (datum, ocjena, komentar, id_gost, id_rezervacija)
-    VALUES ('2023-05-11', 5, 'Odlična usluga!', 1, 1);
+    VALUES ('2023-05-11', '5', 'Odlična usluga!', 1, 1);
 
 
 -- 18.Tablica usluge --
