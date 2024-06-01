@@ -84,6 +84,253 @@ VALUES
     ('Hrana', 'Povrće', 150),
     ('Piće', 'Kava', 180);
 
+-- 4.Tablica koja povezuje radnik-skladiste, rezultat odnosa "vise-na-vise" --
+INSERT INTO radnik_skladiste (id_radnik, id_skladiste, datum_provjere, napomena)
+VALUES
+(1, 1, '2024-01-01', 'Provjera stanja zaliha u glavnom skladištu.'),
+(2, 1, '2024-01-02', 'Pregled kvalitete svježeg voća i povrća.'),
+(3, 2, '2024-01-03', 'Provjera ispravnosti elektroničkih uređaja.'),
+(4, 2, '2024-01-04', 'Ocjenjivanje stanja inventara kuhinjske opreme.'),
+(5, 3, '2024-01-05', 'Provjera kvalitete posteljine i ručnika.'),
+(6, 3, '2024-01-06', 'Pregled stanja mini barova u sobama.'),
+(1, 1, '2024-02-01', 'Provjera stanja zaliha u glavnom skladištu.'),
+(2, 1, '2024-02-02', 'Pregled kvalitete svježeg voća i povrća.'),
+(3, 2, '2024-02-03', 'Provjera ispravnosti elektroničkih uređaja.'),
+(4, 2, '2024-02-04', 'Ocjenjivanje stanja inventara kuhinjske opreme.'),
+(5, 3, '2024-02-05', 'Provjera kvalitete posteljine i ručnika.'),
+(6, 3, '2024-02-06', 'Pregled stanja mini barova u sobama.'),
+(1, 1, '2024-03-01', 'Provjera stanja zaliha u glavnom skladištu.'),
+(2, 1, '2024-03-02', 'Pregled kvalitete svježeg voća i povrća.'),
+(3, 2, '2024-03-03', 'Provjera ispravnosti elektroničkih uređaja.'),
+(4, 2, '2024-03-04', 'Ocjenjivanje stanja inventara kuhinjske opreme.'),
+(5, 3, '2024-03-05', 'Provjera kvalitete posteljine i ručnika.'),
+(6, 3, '2024-03-06', 'Pregled stanja mini barova u sobama.'),
+(1, 1, '2024-04-01', 'Provjera stanja zaliha u glavnom skladištu.'),
+(2, 1, '2024-04-02', 'Pregled kvalitete svježeg voća i povrća.'),
+(3, 2, '2024-04-03', 'Provjera ispravnosti elektroničkih uređaja.'),
+(4, 2, '2024-04-04', 'Ocjenjivanje stanja inventara kuhinjske opreme.'),
+(5, 3, '2024-04-05', 'Provjera kvalitete posteljine i ručnika.'),
+(6, 3, '2024-04-06', 'Pregled stanja mini barova u sobama.'),
+(1, 1, '2024-05-01', 'Provjera stanja zaliha u glavnom skladištu.'),
+(2, 1, '2024-05-02', 'Pregled kvalitete svježeg voća i povrća.'),
+(3, 2, '2024-05-03', 'Provjera ispravnosti elektroničkih uređaja.'),
+(4, 2, '2024-05-04', 'Ocjenjivanje stanja inventara kuhinjske opreme.'),
+(5, 3, '2024-05-05', 'Provjera kvalitete posteljine i ručnika.'),
+(6, 3, '2024-05-06', 'Pregled stanja mini barova u sobama.');
+
+
+-- 5.Tablica dobavljac--
+INSERT INTO dobavljac (naziv, kontakt_osoba, telefon, email)
+VALUES
+('Fresh Food d.o.o.', 'Ivan Horvat', '+385991234567', 'info@freshfood.com'),
+('Meblo d.o.o.', 'Ana Kovač', '+385981234567', 'ana@meblo.hr'),
+('Voće i povrće d.o.o.', 'Marko Novak', '+385971234567', 'marko@voceipovrce.hr'),
+('Čistoća d.o.o.', 'Marija Knežević', '+385961234567', 'marija@cistoca.hr'),
+('Elektronika Plus d.o.o.', 'Petar Horvat', '+385951234567', 'petar@elektronikaplus.hr'),
+('Tekstilni svijet d.o.o.', 'Ivana Kovačević', '+385941234567', 'ivana@tekstilnisvijet.hr'),
+('Agro voće d.o.o.', 'Antonio Maretić', '+385931234567', 'antonio@agrovoce.hr'),
+('Majstor alat d.o.o.', 'Igor Matić', '+385921234567', 'igor@majstoralat.hr'),
+('Gastro oprema d.o.o.', 'Martina Kovač', '+385911234567', 'martina@gastrooprema.hr'),
+('Bio proizvodi d.o.o.', 'Ivana Horvat', '+385901234567', 'ivana@bioproizvodi.hr'),
+('Novi namještaj d.o.o.', 'Petar Novak', '+385991234566', 'petar@novinamjestaj.hr'),
+('Brza dostava d.o.o.', 'Ana Maretić', '+385981234566', 'ana@brzadostava.hr'),
+('Voće iz domaćeg uzgoja d.o.o.', 'Marko Kovač', '+385971234566', 'marko@domacevoce.hr'),
+('Čistoća i urednost d.o.o.', 'Marija Novak', '+385961234566', 'marija@uredno.hr'),
+('Elektro oprema d.o.o.', 'Petra Knežević', '+385951234566', 'petra@elektrooprema.hr'),
+('Tekstilne kreacije d.o.o.', 'Ivan Kovačević', '+385941234566', 'ivan@tekstilkreacije.hr'),
+('Poljoprivredni proizvodi d.o.o.', 'Antonio Horvat', '+385931234566', 'antonio@poljoprivredni.hr'),
+('Alati i oprema d.o.o.', 'Igor Maretić', '+385921234566', 'igor@alatioprema.hr'),
+('Kuhinjska oprema d.o.o.', 'Martina Novak', '+385911234566', 'martina@kuhinjskaoprema.hr'),
+('Organski proizvodi d.o.o.', 'Ivana Maretić', '+385901234566', 'ivana@organski.hr'),
+('Nove stolice d.o.o.', 'Petar Knežević', '+385991234565', 'petar@novestolice.hr'),
+('Brza isporuka d.o.o.', 'Ana Novak', '+385981234565', 'ana@brzaisporuka.hr'),
+('Voće iz ekološkog uzgoja d.o.o.', 'Marko Knežević', '+385971234565', 'marko@eko.hr'),
+('Čistoća bez kompromisa d.o.o.', 'Marija Kovač', '+385961234565', 'marija@bezkompromisa.hr'),
+('Elektro instalacije d.o.o.', 'Petra Novak', '+385951234565', 'petra@elektroinstalacije.hr'),
+('Tekstilna industrija d.o.o.', 'Ivan Maretić', '+385941234565', 'ivan@tekstilindustrija.hr'),
+('Poljoprivreda i uzgoj d.o.o.', 'Antonio Kovačević', '+385931234565', 'antonio@poljoprivreda.hr'),
+('Alat i pribor d.o.o.', 'Igor Novak', '+385921234565', 'igor@alati.hr'),
+('Kuhinjski pribor d.o.o.', 'Martina Kovač', '+385911234565', 'martina@kuhinjskipribor.hr');
+
+
+-- 6.Tablica koja povezuje skladiste-dobavljac, rezultat odnosa "vise-na-vise" --
+INSERT INTO skladiste_dobavljac (id_skladiste, id_dobavljac, datum_dostave, napomena) 
+VALUES
+(1, 1, '2024-01-01', 'Dostava robe za popunjavanje zaliha.'),
+(1, 2, '2024-01-05', 'Nova pošiljka namještaja za hotelske sobe.'),
+(2, 3, '2024-01-10', 'Dostava svježeg voća i povrća za restoran.'),
+(2, 4, '2024-01-15', 'Nabavka potrošnog materijala za čišćenje.'),
+(3, 5, '2024-01-20', 'Dostava novih elektroničkih uređaja za sobe.'),
+(3, 6, '2024-01-25', 'Nabavka dodatnih artikala za minibar u sobama.'),
+(1, 1, '2024-02-01', 'Dostava svježeg mesa i ribe za restoran.'),
+(1, 2, '2024-02-05', 'Nabavka potrošnog materijala za održavanje soba.'),
+(2, 3, '2024-02-10', 'Dostava novih stolova i stolica za restoran.'),
+(2, 4, '2024-02-15', 'Nabavka kuhinjskih aparata za restoran.'),
+(3, 5, '2024-02-20', 'Dostava novih madraca za hotelske sobe.'),
+(3, 6, '2024-02-25', 'Nabavka dodatnih ručnika i posteljine.'),
+(1, 1, '2024-03-01', 'Dostava svježeg voća i povrća za restoran.'),
+(1, 2, '2024-03-05', 'Nabavka novih sobnih ključeva za goste.'),
+(2, 3, '2024-03-10', 'Dostava novih tepiha za hotelske sobe.'),
+(2, 4, '2024-03-15', 'Nabavka potrošnog materijala za čišćenje bazena.'),
+(3, 5, '2024-03-20', 'Dostava novih televizora za hotelske sobe.'),
+(3, 6, '2024-03-25', 'Nabavka dodatnih mini barova za sobe.'),
+(1, 1, '2024-04-01', 'Dostava svježeg mesa i ribe za restoran.'),
+(1, 2, '2024-04-05', 'Nabavka potrošnog materijala za održavanje soba.'),
+(2, 3, '2024-04-10', 'Dostava novih stolova i stolica za restoran.'),
+(2, 4, '2024-04-15', 'Nabavka kuhinjskih aparata za restoran.'),
+(3, 5, '2024-04-20', 'Dostava novih madraca za hotelske sobe.'),
+(3, 6, '2024-04-25', 'Nabavka dodatnih ručnika i posteljine.'),
+(1, 1, '2024-05-01', 'Dostava svježeg voća i povrća za restoran.'),
+(1, 2, '2024-05-05', 'Nabavka novih sobnih ključeva za goste.'),
+(2, 3, '2024-05-10', 'Dostava novih tepiha za hotelske sobe.'),
+(2, 4, '2024-05-15', 'Nabavka potrošnog materijala za čišćenje bazena.'),
+(3, 5, '2024-05-20', 'Dostava novih televizora za hotelske sobe.'),
+(3, 6, '2024-05-25', 'Nabavka dodatnih mini barova za sobe.');
+
+
+-- 8.Tablica smjena_radnika --
+INSERT INTO smjena_radnika (naziv, vrijeme_pocetka, vrijeme_zavrsetka) 
+VALUES
+('Jutarnja smjena', '08:00:00', '16:00:00'),
+('Popodnevna smjena', '16:00:00', '00:00:00'),
+('Noćna smjena', '00:00:00', '08:00:00');
+
+-- 9.Tablica koja povezuje radnik-smjena_radnik, rezultat odnosa "vise-na-vise" --
+INSERT INTO radnik_smjena_radnika (id_radnik, id_smjena, datum) 
+VALUES
+(1, 1, '2024-01-01'),
+(2, 2, '2024-01-02'),
+(3, 3, '2024-01-03'),
+(4, 4, '2024-01-04'),
+(5, 5, '2024-01-05'),
+(6, 6, '2024-01-06'),
+(7, 7, '2024-01-07'),
+(8, 8, '2024-01-08'),
+(9, 9, '2024-01-09'),
+(10, 10, '2024-01-10'),
+(11, 11, '2024-01-11'),
+(12, 12, '2024-01-12'),
+(13, 13, '2024-01-13'),
+(14, 14, '2024-01-14'),
+(15, 15, '2024-01-15'),
+(16, 16, '2024-01-16'),
+(17, 17, '2024-01-17'),
+(18, 18, '2024-01-18'),
+(19, 19, '2024-01-19'),
+(20, 20, '2024-01-20'),
+(21, 21, '2024-01-21'),
+(22, 22, '2024-01-22'),
+(23, 23, '2024-01-23'),
+(24, 24, '2024-01-24'),
+(25, 25, '2024-01-25'),
+(26, 26, '2024-01-26'),
+(27, 27, '2024-01-27'),
+(28, 28, '2024-01-28'),
+(29, 29, '2024-01-29'),
+(30, 30, '2024-01-30');
+
+
+-- 11.Tablica soba --
+INSERT INTO soba (broj_sobe, tip, opis, cijena_nocenja, id_raspored_ciscenja) 
+VALUES
+(101, 'Jednokrevetna', 'Soba s jednim krevetom i privatnom kupaonicom.', 50.00, 1),
+(102, 'Jednokrevetna', 'Soba s jednim krevetom i pogledom na more.', 60.00, 2),
+(103, 'Jednokrevetna', 'Soba s jednim krevetom i balkonom.', 55.00, 3),
+(104, 'Dvokrevetna', 'Soba s bračnim krevetom i dodatnim ležajem.', 70.00, 4),
+(105, 'Dvokrevetna', 'Soba s dva odvojena kreveta.', 65.00, 5),
+(106, 'Dvokrevetna', 'Soba s bračnim krevetom i pogledom na planine.', 75.00, 6),
+(107, 'Trokrevetna', 'Prostrana soba s bračnim krevetom i jednim odvojenim krevetom.', 85.00, 7),
+(108, 'Trokrevetna', 'Soba s jednim bračnim krevetom i dva odvojena kreveta.', 80.00, 8),
+(109, 'Trokrevetna', 'Soba s bračnim krevetom, jednim odvojenim krevetom i balkonom.', 90.00, 9),
+(110, 'Obiteljska', 'Velika soba s bračnim krevetom, dva odvojena kreveta i balkonom.', 100.00, 10),
+(111, 'Obiteljska', 'Soba s bračnim krevetom, dva odvojena kreveta i pogledom na more.', 110.00, 11),
+(112, 'Obiteljska', 'Soba s dva bračna kreveta i dodatnim ležajem.', 120.00, 12),
+(113, 'Suite', 'Elegantna soba s luksuznim namještajem i pogledom na rijeku.', 150.00, 13),
+(114, 'Suite', 'Soba s prostranim dnevnim boravkom i panoramskim pogledom.', 160.00, 14),
+(115, 'Suite', 'Luksuzna soba s bračnim krevetom, jacuzzijem i privatnim balkonom.', 180.00, 15),
+(201, 'Jednokrevetna', 'Soba s jednim krevetom i privatnom kupaonicom.', 50.00, 16),
+(202, 'Jednokrevetna', 'Soba s jednim krevetom i pogledom na more.', 60.00, 17),
+(203, 'Jednokrevetna', 'Soba s jednim krevetom i balkonom.', 55.00, 18),
+(204, 'Dvokrevetna', 'Soba s bračnim krevetom i dodatnim ležajem.', 70.00, 19),
+(205, 'Dvokrevetna', 'Soba s dva odvojena kreveta.', 65.00, 20),
+(206, 'Dvokrevetna', 'Soba s bračnim krevetom i pogledom na planine.', 75.00, 21),
+(207, 'Trokrevetna', 'Prostrana soba s bračnim krevetom i jednim odvojenim krevetom.', 85.00, 22),
+(208, 'Trokrevetna', 'Soba s jednim bračnim krevetom i dva odvojena kreveta.', 80.00, 23),
+(209, 'Trokrevetna', 'Soba s bračnim krevetom, jednim odvojenim krevetom i balkonom.', 90.00, 24),
+(210, 'Obiteljska', 'Velika soba s bračnim krevetom, dva odvojena kreveta i balkonom.', 100.00, 25),
+(211, 'Obiteljska', 'Soba s bračnim krevetom, dva odvojena kreveta i pogledom na more.', 110.00, 26),
+(212, 'Obiteljska', 'Soba s dva bračna kreveta i dodatnim ležajem.', 120.00, 27),
+(213, 'Suite', 'Elegantna soba s luksuznim namještajem i pogledom na rijeku.', 150.00, 28),
+(214, 'Suite', 'Soba s prostranim dnevnim boravkom i panoramskim pogledom.', 160.00, 29),
+(215, 'Suite', 'Luksuzna soba s bračnim krevetom, jacuzzijem i privatnim balkonom.', 180.00, 30);
+
+
+-- 12.Tablica zahtjev_odrzavanja --
+INSERT INTO zahtjev_odrzavanja (opis, datum_zahtjeva, stanje, id_soba, id_gost) 
+VALUES
+('Potrebno je popraviti slomljenu svjetiljku.', '2024-01-01', 'U tijeku', 1, 1),
+('Zamijeniti dotrajalu klima uređaj.', '2024-01-02', 'U tijeku', 2, 2),
+('Otkazati zahtjev za čišćenjem sobe.', '2024-01-03', 'Otkazano', 3, 3),
+('Završiti renovaciju kupaonice.', '2024-01-04', 'Završeno', 4, 4),
+('Otkazati zahtjev za dodatnim ručnicima.', '2024-01-05', 'Otkazano', 5, 5),
+('Potrebno je popraviti slavinu u kupaonici.', '2024-01-06', 'U tijeku', 6, 6),
+('Zamijeniti dotrajali tepih u sobi.', '2024-01-07', 'U tijeku', 7, 7),
+('Popraviti vrata ormara koja se teško zatvaraju.', '2024-01-08', 'U tijeku', 8, 8),
+('Završiti bojanje zidova u sobi.', '2024-01-09', 'Završeno', 9, 9),
+('Otkazati zahtjev za dodatnim jastucima.', '2024-01-10', 'Otkazano', 10, 10),
+('Potrebno je očistiti ventilacijske otvore.', '2024-01-11', 'U tijeku', 11, 11),
+('Zamijeniti dotrajali madrac na krevetu.', '2024-01-12', 'U tijeku', 12, 12),
+('Završiti montažu radnog stola u sobi.', '2024-01-13', 'Završeno', 13, 13),
+('Otkazati zahtjev za dodatnim pokrivačima.', '2024-01-14', 'Otkazano', 14, 14),
+('Potrebno je popraviti pokvareni televizor.', '2024-01-15', 'U tijeku', 15, 15),
+('Zamijeniti dotrajale utičnice u sobi.', '2024-01-16', 'U tijeku', 1, 16),
+('Otkazati zahtjev za dodatnim ručnicima.', '2024-01-17', 'Otkazano', 2, 17),
+('Potrebno je popraviti slomljenu stolicu.', '2024-01-18', 'U tijeku', 3, 18),
+('Zamijeniti dotrajali tepih u hodniku.', '2024-01-19', 'U tijeku', 4, 19),
+('Završiti popravak rasvjete u sobi.', '2024-01-20', 'Završeno', 5, 20),
+('Otkazati zahtjev za dodatnim jastucima.', '2024-01-21', 'Otkazano', 6, 21),
+('Potrebno je očistiti ventilacijske otvore.', '2024-01-22', 'U tijeku', 7, 22),
+('Zamijeniti dotrajali madrac na krevetu.', '2024-01-23', 'U tijeku', 8, 23),
+('Završiti montažu radnog stola u sobi.', '2024-01-24', 'Završeno', 9, 24),
+('Otkazati zahtjev za dodatnim pokrivačima.', '2024-01-25', 'Otkazano', 10, 25),
+('Potrebno je popraviti pokvareni televizor.', '2024-01-26', 'U tijeku', 11, 26),
+('Zamijeniti dotrajale utičnice u sobi.', '2024-01-27', 'U tijeku', 12, 27),
+('Otkazati zahtjev za dodatnim ručnicima.', '2024-01-28', 'O
+
+
+-- 13.Tablica sadrzaj --
+INSERT INTO sadrzaj (naziv, opis) 
+VALUES
+('TV', 'Televizor s dostupnim TV programima.'),
+('Klima uređaj', 'Klima uređaj za regulaciju temperature.'),
+('Mini bar', 'Mini hladnjak s raznim pićima i grickalicama.'),
+('Wi-Fi', 'Besplatan pristup bežičnom internetu.'),
+('Radni stol', 'Radni stol za udobno radno okruženje.'),
+('Kava i čaj', 'Besplatan čaj i kava u sobi.'),
+('Sef', 'Sigurnosni sef za čuvanje vrijednih predmeta.'),
+('Kupaonica', 'Privatna kupaonica s tušem i toaletom.'),
+('Balkon', 'Privatni balkon s pogledom na okolinu.'),
+('Besplatan doručak', 'Doručak uključen u cijenu smještaja.'),
+('Room service', 'Usluga dostave hrane i pića u sobu.'),
+('Fitness centar', 'Pristup fitness centru s modernom opremom.'),
+('Wellness centar', 'Pristup wellness centru s saunom i bazenom.'),
+('Spa tretmani', 'Razni spa tretmani i masaže.'),
+('Bazen', 'Vanjski bazen za osvježenje i opuštanje.'),
+('Parkiralište', 'Besplatno parkiralište za goste hotela.'),
+('Restoran', 'Restoran unutar hotela s bogatim izborom jela.'),
+('Bar', 'Bar unutar hotela s raznovrsnom ponudom pića.'),
+('Recepcija 24/7', 'Recepcija otvorena 24 sata dnevno.'),
+('Doručak u sobi', 'Mogućnost naručivanja doručka u sobu.'),
+('Perilica rublja', 'Mogućnost korištenja perilice rublja.'),
+('Sušilo za kosu', 'Sušilo za kosu u kupaonici.'),
+('Besplatni toaletni pribor', 'Toaletni pribor dostupan u sobi.'),
+('Usluga čišćenja', 'Redovna usluga čišćenja sobe.'),
+('Glačalo', 'Glačalo i stol za glačanje na zahtjev.'),
+('Soba za nepušače', 'Soba namijenjena nepušačima.'),
+('Kućni ljubimci dozvoljeni', 'Dozvoljen boravak kućnih ljubimaca.'),
+('Dječji krevetić', 'Dječji krevetić dostupan na zahtjev.'),
+('Besplatna karta grada', 'Besplatna karta grada s turističkim informacijama.');
+
 
 -- 14.Tablica koja povezuje soba-sadrzaj, rezultat odnosa "vise-na-vise" --
 INSERT INTO soba_sadrzaj (id_soba, id_sadrzaj, kolicina) 
