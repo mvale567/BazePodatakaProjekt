@@ -119,6 +119,28 @@ SELECT AVG(DATEDIFF(datum_odjave, datum_prijave)) AS prosjecna_duzina_boravka
 FROM rezervacija;
 -- KRAJ UPITA 8
 
+-- UPIT 9
+/*Hotel manager je zatražio informaciju kolika je prosječna cijena po rezervaciji.
+To smo učinili na sljedeći način: selektirali smo atribut iznos iz tablice racun te
+smo nad njim koristili operator AVG kako bi dobili prosječnu cijenu. Na kraju smo 
+novokreirani atribut nazvali procjecna_cjena_po_rezervaciji pomoću operatora AS.
+*/
+SELECT AVG(iznos) AS prosjecna_cjena_po_rezervaciji
+FROM racun;
+-- KRAJ UPITA 9
 
-
-
+-- UPIT 10
+/* Voditelj recepcije je zatražio evidenciju koliko soba postoji u hotelu po
+tipu sobe.
+To smo učinili na sljedeći način: kreirali smo pogled evidencija_soba. Selektirali smo atribut tip
+iz tablice soba te smo koristili operator COUNT kako bi prebrojali sve redove. Taj atribut smo nazvali broj_soba
+pomoću operatora AS. Na kraju smo grupirali podatke pomoću GROUP BY po atributu tip kako bi dobili grupirane tipove soba, a sortirali
+smo ih pomoću operatora ORDER BY po novom atributu broj_soba, no silazno ( od najveće količine soba do najmanje) pomoću operatora
+DESC.
+*/
+CREATE VIEW evidencija_soba AS
+SELECT tip, COUNT(*) AS broj_soba
+FROM soba
+GROUP BY tip
+ORDER BY broj_soba DESC;
+-- KRAJ UPITA 10
