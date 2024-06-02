@@ -57,7 +57,7 @@ VALUES
     ('Ana', 'Babić', 'Konferencijski centar', '0978901236', 'ana.babic@example.com', '2024-09-30', 5);
     
     
-SELECT * FROM radnik;
+SELECT * FROM skladiste;
 -- INSERT podaci za tablicu gost
 INSERT INTO gost (ime, prezime, datum_rodenja, adresa, telefon, email)
 VALUES 
@@ -161,6 +161,9 @@ VALUES
     ('2023-06-01', 225.00),
     ('2023-06-02', 285.00),
     ('2023-06-03', 195.00);
+    
+SELECT * FROM racun;
+SELECT * FROM usluge;
 
 -- INSERT podaci za tablicu rezervacija
 INSERT INTO rezervacija (datum_prijave, datum_odjave, broj_gostiju, id_gost, id_radnik, id_racun)
@@ -360,7 +363,56 @@ VALUES
     (19, 1, '2024-06-03'), -- Radnik 19 u jutarnjoj smjeni 2024-06-03
     (20, 2, '2024-06-03'); -- Radnik 20 u popodnevnoj smjeni 2024-06-03
 
+INSERT INTO racun_usluge (id_racun, id_usluga)
+    VALUES  (1, 1), -- Racun 1 ima uslugu 1
+        (1, 2), -- Racun 1 ima uslugu 2
+        (2, 3), -- Racun 2 ima uslugu 3
+        (3, 4), -- Racun 3 ima uslugu 4
+        (4, 5), -- Racun 4 ima uslugu 5
+        (5, 1), -- Racun 5 ima uslugu 1
+        (6, 2), -- Racun 6 ima uslugu 2
+        (7, 3), -- Racun 7 ima uslugu 3
+        (8, 4), -- Racun 8 ima uslugu 4
+        (9, 5), -- Racun 9 ima uslugu 5
+        (10, 1), -- Racun 10 ima uslugu 1
+        (11, 2), -- Racun 11 ima uslugu 2
+        (12, 3), -- Racun 12 ima uslugu 3
+        (13, 4), -- Racun 13 ima uslugu 4
+        (14, 5), -- Racun 14 ima uslugu 5
+        (15, 1), -- Racun 15 ima uslugu 1
+        (16, 2), -- Racun 16 ima uslugu 2
+        (17, 3), -- Racun 17 ima uslugu 3
+        (18, 4), -- Racun 18 ima uslugu 4
+        (19, 5);
 
-
-
-SELECT * FROM smjena_radnika;
+INSERT INTO skladiste_dobavljac (id_skladiste, id_dobavljac, datum_dostave, napomena) 
+    VALUES  (11, 1, '2023-05-20', 'Dostava na vrijeme'),
+            (12, 2, '2023-05-21', 'Brza dostava'),
+            (13, 3, '2023-05-22', 'Kvalitetni proizvodi'),
+            (14, 4, '2023-05-23', 'Dostava po dogovoru'),
+            (15, 5, '2023-05-24', 'Povoljne cijene'),
+            (16, 6, '2023-05-25', 'Dostava sa smiješkom'),
+            (17, 7, '2023-05-26', 'Iznimna uslužnost'),
+            (18, 8, '2023-05-27', 'Kvalitetna ambalaža'),
+            (19, 9, '2023-05-28', 'Ekspresna dostava'),
+            (20, 10, '2023-05-29', 'Pouzdanost i brzina'),
+            (21, 1, '2023-05-30', 'Dostava na vrijeme'),
+            (22, 2, '2023-05-31', 'Brza dostava'),
+            (23, 3, '2023-06-01', 'Kvalitetni proizvodi'),
+            (24, 4, '2023-06-02', 'Dostava po dogovoru'),
+            (25, 5, '2023-06-03', 'Povoljne cijene'),
+            (26, 6, '2023-06-04', 'Dostava sa smiješkom'),
+            (27, 7, '2023-06-05', 'Iznimna uslužnost'),
+            (28, 8, '2023-06-06', 'Kvalitetna ambalaža'),
+            (29, 9, '2023-06-07', 'Ekspresna dostava'),
+            (30, 10, '2023-06-08', 'Pouzdanost i brzina'),
+            (31, 1, '2023-06-09', 'Dostava na vrijeme'),
+            (32, 2, '2023-06-10', 'Brza dostava'),
+            (33, 3, '2023-06-11', 'Kvalitetni proizvodi'),
+            (34, 4, '2023-06-12', 'Dostava po dogovoru'),
+            (35, 5, '2023-06-13', 'Povoljne cijene'),
+            (36, 6, '2023-06-14', 'Dostava sa smiješkom'),
+            (37, 7, '2023-06-15', 'Iznimna uslužnost'),
+            (38, 8, '2023-06-16', 'Kvalitetna ambalaža'),
+            (39, 9, '2023-06-17', 'Ekspresna dostava'),
+            (40, 10, '2023-06-18', 'Pouzdanost i brzina');
