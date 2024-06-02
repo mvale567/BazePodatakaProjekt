@@ -241,7 +241,7 @@ CREATE TABLE usluge (
 
 -- 19.Tablica koja povezuje racun-usluge, rezultat odnosa "vise-na-vise" --
 CREATE TABLE racun_usluge (
-    id_racun INT NOT NULL,
+    id_racun INT,
     id_usluga INT,
     PRIMARY KEY (id_racun, id_usluga),
     FOREIGN KEY (id_racun) REFERENCES racun(id),
