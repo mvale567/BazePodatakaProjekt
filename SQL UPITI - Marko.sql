@@ -62,3 +62,93 @@ LEFT JOIN
 SELECT * FROM skladiste_dobavljac;
 
 
+SELECT 
+    r.id AS rezervacija_id,
+    g.ime AS gost_ime,
+    g.prezime AS gost_prezime,
+    r.datum_prijave,
+    r.datum_odjave,
+    r.broj_gostiju,
+    rd.ime AS radnik_ime,
+    rd.prezime AS radnik_prezime,
+    s.broj_sobe,
+    s.tip AS soba_tip,
+    s.cijena_nocenja,
+    rc.iznos AS racun_iznos,
+    GROUP_CONCAT(u.naziv SEPARATOR ', ') AS usluge
+FROM 
+    rezervacija r
+    JOIN gost g ON r.id_gost = g.id
+    JOIN radnik rd ON r.id_radnik = rd.id
+    JOIN soba s ON s.id_rezervacija = r.id
+    JOIN racun rc ON r.id_racun = rc.id
+    LEFT JOIN racun_usluge ru ON rc.id = ru.id_racun
+    LEFT JOIN usluge u ON ru.id_usluga = u.id
+GROUP BY 
+    r.id, g.ime, g.prezime, r.datum_prijave, r.datum_odjave, r.broj_gostiju, rd.ime, rd.prezime, s.broj_sobe, s.tip, s.cijena_nocenja, rc.iznos;
+
+SELECT 
+    r.id AS rezervacija_id,
+    g.ime AS gost_ime,
+    g.prezime AS gost_prezime,
+    r.datum_prijave,
+    r.datum_odjave,
+    r.broj_gostiju,
+    rd.ime AS radnik_ime,
+    rd.prezime AS radnik_prezime,
+    s.broj_sobe,
+    s.tip AS soba_tip,
+    s.cijena_nocenja,
+    rc.iznos AS racun_iznos,
+    GROUP_CONCAT(DISTINCT u.naziv SEPARATOR ', ') AS usluge,
+    z.opis AS zahtjev_opis,
+    z.datum_zahtjeva,
+    z.stanje AS zahtjev_stanje,
+    rec.datum AS recenzija_datum,
+    rec.ocjena AS recenzija_ocjena,
+    rec.komentar AS recenzija_komentar
+FROM 
+    rezervacija r
+    JOIN gost g ON r.id_gost = g.id
+    JOIN radnik rd ON r.id_radnik = rd.id
+    JOIN soba s ON s.id_rezervacija = r.id
+    JOIN racun rc ON r.id_racun = rc.id
+    LEFT JOIN racun_usluge ru ON rc.id = ru.id_racun
+    LEFT JOIN usluge u ON ru.id_usluga = u.id
+    LEFT JOIN zahtjev_odrzavanja z ON s.id = z.id_soba AND g.id = z.id_gost
+    LEFT JOIN recenzija rec ON r.id = rec.id_rezervacija
+GROUP BY 
+    r.id, g.ime, g.prezime, r.datum_prijave, r.datum_odjave, r.broj_gostiju, rd.ime, rd.prezime, s.broj_sobe, s.tip, s.cijena_nocenja, rc.iznos, z.opis, z.datum_zahtjeva, z.stanje, rec.datum, rec.ocjena, rec.komentar;
+    
+    
+    
+    
+CREATE VIEW detalji_gosta_potrosnja AS
+SELECT 
+    g.id AS gost_id,
+    g.ime AS gost_ime,
+    g.prezime AS gost_prezime,
+    g.datum_rodenja AS datum_rodenja,
+    g.adresa AS adresa,
+    g.telefon AS telefon,
+    g.email AS email,
+    r.id AS rezervacija_id,
+    r.datum_prijave AS datum_prijave,
+    r.datum_odjave AS datum_odjave,
+    r.broj_gostiju AS broj_gostiju,
+    rc.id AS racun_id,
+    rc.datum AS datum_racuna,
+    rc.iznos AS iznos_racuna,
+    GROUP_CONCAT(DISTINCT u.naziv SEPARATOR ', ') AS usluge
+FROM 
+    gost g
+    JOIN rezervacija r ON g.id = r.id_gost
+    JOIN racun rc ON r.id_racun = rc.id
+    LEFT JOIN racun_usluge ru ON rc.id = ru.id_racun
+    LEFT JOIN usluge u ON ru.id_usluga = u.id
+WHERE
+    rc.iznos > 200
+GROUP BY 
+    g.id, g.ime, g.prezime, g.datum_rodenja, g.adresa, g.telefon, g.email, r.id, r.datum_prijave, r.datum_odjave, r.broj_gostiju, rc.id, rc.datum, rc.iznos;
+    
+SELECT * FROM detalji_gosta_potrosnja;
