@@ -19,6 +19,18 @@ ERD_dijagram PNG FILE,
 Tim-t_Izvjesce PDF FILE,
 Veze između entiteta PDF FILE,
 
+Raspodjela poslova po studentima:
+
+Marko: izrada dokumentacije, ER dijagrama, implementacija baze podataka, izrada EER dijagrama kroz SQL, insert podataka u skupni file, izrada upita, pomoć ostalima, organizacija
+Marta: obrada relacija, kreiranje tablica, izrada dokumentacije za dio zadatka koji je radila, insert podataka, pomoć ostalima
+Tanja: obrada relacija, kreiranje tablica, izrada dokumentacije za dio zadatka koji je radila, insert podataka, edit videa, često kreiranje zoom meetinga
+Iva: obrada relacija, kreiranje tablica, izrada dokumentacije za dio zadatka koji je radila, insert podataka, pomoć ostalima
+Lea: obrada relacija, kreiranje tablica, izrada dokumentacije za dio zadatka koji je radila, insert podataka, pomoć ostalima
+
+Svi studenti su aktivno sudjelovali u izradi projekta!!
+
+
+
 
 
 
