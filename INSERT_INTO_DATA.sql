@@ -307,12 +307,32 @@ VALUES
 -- INSERT podaci za tablicu racun_vrsta_placanja
 INSERT INTO racun_vrsta_placanja (id_racun, id_placanje)
 VALUES 
-    (1, 2),
-    (2, 3),
-    (3, 1),
+    (1, 1),
+    (2, 2),
+    (3, 3),
     (4, 4),
-    (5, 2);
-    
+    (5, 1),
+    (6, 2),
+    (7, 3),
+    (8, 4),
+    (9, 1),
+    (10, 2),
+    (11, 3),
+    (12, 4),
+    (13, 1),
+    (14, 2),
+    (15, 3),
+    (16, 4),
+    (17, 1),
+    (18, 2),
+    (19, 3),
+    (20, 4),
+    (21, 1),
+    (22, 2),
+    (23, 3),
+    (24, 4);
+
+SELECT * FROM vrsta_placanja;
 INSERT INTO radnik_raspored_ciscenja (id_radnik, id_raspored_ciscenja)
 VALUES 
     (2, 1),
@@ -320,7 +340,7 @@ VALUES
     (4, 1),
     (5, 1),
     (1, 1);
-    
+
 INSERT INTO dobavljac ( naziv, kontakt_osoba, telefon, email)
  VALUES  ('CleanCo Supplies', 'Ivan Novak', '0912345678', 'ivan.novak@cleanco.com'),
         ('TechSolutions', 'Marija Kovač', '0912345679', 'marija.kovac@techsolutions.com'),
@@ -416,3 +436,5 @@ INSERT INTO skladiste_dobavljac (id_skladiste, id_dobavljac, datum_dostave, napo
             (38, 8, '2023-06-16', 'Kvalitetna ambalaža'),
             (39, 9, '2023-06-17', 'Ekspresna dostava'),
             (40, 10, '2023-06-18', 'Pouzdanost i brzina');
+            
+            
