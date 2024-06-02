@@ -1,459 +1,211 @@
 USE hotel;
 
--- 10.Tablica raspored_ciscenja --
+-- INSERT podaci za tablicu raspored_ciscenja
 INSERT INTO raspored_ciscenja (datum, stanje)
 VALUES 
-    ('2023-05-01', 'Završeno'),
+    ('2023-05-02', 'Nije završeno'),
+    ('2023-05-03', 'Nije završeno'),
+    ('2023-05-04', 'Nije završeno'),
+    ('2023-05-05', 'Nije završeno'),
+    ('2023-05-06', 'Nije završeno'),
     ('2023-05-02', 'U tijeku'),
-    ('2023-05-03', 'Planirano'),
-    ('2023-05-04', 'Planirano'),
-    ('2023-05-05', 'U tijeku'),
-    ('2023-05-06', 'Završeno'),
-    ('2023-05-07', 'Planirano'),
+    ('2023-05-04', 'U tijeku'),
+    ('2023-05-06', 'U tijeku'),
     ('2023-05-08', 'U tijeku'),
+    ('2023-05-10', 'U tijeku'),
+    ('2023-05-03', 'Završeno'),
+    ('2023-05-05', 'Završeno'),
+    ('2023-05-07', 'Završeno'),
     ('2023-05-09', 'Završeno'),
-    ('2023-05-10', 'Planirano'),
-    ('2023-05-11', 'U tijeku'),
-    ('2023-05-12', 'Završeno'),
-    ('2023-05-13', 'Planirano'),
-    ('2023-05-14', 'U tijeku'),
-    ('2023-05-15', 'Završeno'),
-    ('2023-05-16', 'Planirano'),
-    ('2023-05-17', 'U tijeku'),
-    ('2023-05-18', 'Završeno'),
-    ('2023-05-19', 'Planirano'),
-    ('2023-05-20', 'U tijeku'),
-    ('2023-05-21', 'Završeno'),
-    ('2023-05-22', 'Planirano'),
-    ('2023-05-23', 'U tijeku'),
-    ('2023-05-24', 'Završeno'),
-    ('2023-05-25', 'Planirano'),
-    ('2023-05-26', 'U tijeku'),
-    ('2023-05-27', 'Završeno'),
-    ('2023-05-28', 'Planirano'),
-    ('2023-05-29', 'U tijeku'),
-    ('2023-05-30', 'Završeno');
+    ('2023-05-11', 'Završeno');
 
--- 7.Tablica radno_mjesto --
+
+-- INSERT podaci za tablicu radno_mjesto
 INSERT INTO radno_mjesto (naziv, opis, odjel)
 VALUES 
-    ('Čistač', 'Čišćenje prostorija', 'Odjel A'),
-    ('Recepcionar', 'Prijava gostiju i izdavanje ključeva', 'Recepcija'),
-    ('Kuhar', 'Priprema jela', 'Restoran'),
-    ('Sobarica', 'Održavanje čistoće soba', 'Odjel čistoće'),
-    ('Administrator', 'Upravljanje sustavom', 'Uprava'),
-    ('Vodoinstalater', 'Popravak vodovodnih instalacija', 'Održavanje');
+    ('Recepcioner', 'Pružanje usluga gostima na recepciji', 'Recepcija'),
+    ('Kuhar', 'Priprema jela u restoranu', 'Restoran'),
+    ('Portir', 'Pomoć gostima pri nošenju prtljage', 'Recepcija'),
+    ('Spa terapeut', 'Pružanje masaža i drugih tretmana', 'Wellness'),
+    ('Voditelj konferencijskog centra', 'Organizacija konferencija i događaja', 'Konferencijski centar'),
+    ('Čistač', 'Održavanje čistoće u hotelu', 'Odrzavanje'),
+    ('Vrtlar', 'Održavanje vrtova i okoliša hotela', 'Odrzavanje'),
+    ('Kuhar', 'Priprema jela u restoranu', 'Restoran');
 
--- 1.Tablica radnik--
-INSERT INTO radnik (ime, prezime, odjel, telefon, email, datum_zaposlenja, id_radno_mjesto, id_raspored_ciscenja)
+-- INSERT podaci za tablicu radnik
+INSERT INTO radnik (ime, prezime, odjel, telefon, email, datum_zaposlenja, id_radno_mjesto)
 VALUES 
-    ('Ivan', 'Horvat', 'Odjel A', '0123456789', 'ivan.horvat@example.com', '2023-01-15', 1, 1),
-    ('Petra', 'Kovačević', 'Recepcija', '0987654321', 'petra.kovacevic@example.com', '2023-02-20', 2, 2),
-    ('Marko', 'Marić', 'Restoran', '0912345678', 'marko.maric@example.com', '2023-03-10', 3, 3),
-    ('Ana', 'Kovač', 'Odjel čistoće', '0956789012', 'ana.kovac@example.com', '2023-04-05', 4, 4),
-    ('Matej', 'Novak', 'Uprava', '0923456789', 'matej.novak@example.com', '2023-05-15', 5, 5);
-
--- 2.Tablica gost --
+    ('Ana', 'Novak', 'Recepcija', '0987654312', 'ana.novak@example.com', '2023-02-10', 6),
+    ('Marko', 'Kovačić', 'Restoran', '0912349678', 'marko.kovacic@example.com', '2023-03-15', 3),
+    ('Petra', 'Horvat', 'Wellness', '0951789012', 'petra.horvat@example.com', '2023-04-20', 6),
+    ('Ivan', 'Knežević', 'Konferencijski centar', '0923456789', 'ivan.knezevic@example.com', '2023-05-25', 5),
+    ('Luka', 'Babić', 'Recepcija', '0978901234', 'luka.babic@example.com', '2023-06-30', 6),
+    ('Marija', 'Petrović', 'Restoran', '0918765432', 'marija.petrovic@example.com', '2023-07-10', 3),
+    ('Ante', 'Jurić', 'Wellness', '0986754321', 'ante.juric@example.com', '2023-08-15', 4),
+    ('Ivana', 'Kovač', 'Recepcija', '0954321098', 'ivana.kovac@example.com', '2023-09-20', 6),
+    ('Stjepan', 'Horvat', 'Konferencijski centar', '0921098765', 'stjepan.horvat@example.com', '2023-10-25', 8),
+    ('Marta', 'Kralj', 'Recepcija', '0976543210', 'marta.kralj@example.com', '2023-11-30', 1),
+    ('Iva', 'Vuković', 'Restoran', '0912345678', 'iva.vukovic@example.com', '2023-12-15', 2),
+    ('Ivan', 'Marinović', 'Recepcija', '0956789112', 'ivan.marinovic@example.com', '2024-01-20', 6),
+    ('Stipe', 'Horvat', 'Konferencijski centar', '0923453489', 'stipe.horvat@example.com', '2024-02-25', 5),
+    ('Mia', 'Babić', 'Wellness', '0978901235', 'mia.babic@example.com', '2024-03-30', 4),
+    ('Ivan', 'Barić', 'Recepcija', '0987654321', 'ivan.baric@example.com', '2024-04-05', 6),
+    ('Iva', 'Kovačević', 'Recepcija', '0987654322', 'iva.kovacevic@example.com', '2024-05-10', 1),
+    ('Ivan', 'Jurić', 'Restoran', '0912345679', 'ivan.juric@example.com', '2024-06-15', 2),
+    ('Maja', 'Horvat', 'Wellness', '0956789013', 'maja.horvat@example.com', '2024-07-20', 4),
+    ('Ivan', 'Kralj', 'Recepcija', '0923456780', 'ivan.kralj@example.com', '2024-08-25', 1),
+    ('Ana', 'Babić', 'Konferencijski centar', '0978901236', 'ana.babic@example.com', '2024-09-30', 5);
+    
+    
+SELECT * FROM radnik;
+-- INSERT podaci za tablicu gost
 INSERT INTO gost (ime, prezime, datum_rodenja, adresa, telefon, email)
 VALUES 
-    ('Ana', 'Kovač', '1985-03-25', 'Ulica 1, Grad', '0912345678', 'ana.kovac@example.com'),
-    ('Ivan', 'Babić', '1978-07-15', 'Trg 2, Grad', '0987654321', 'ivan.babic@example.com'),
-    ('Petra', 'Kovačević', '1990-11-03', 'Prolaz 3, Grad', '0956789012', 'petra.kovacevic@example.com'),
-    ('Marko', 'Horvat', '1982-09-18', 'Avenija 4, Grad', '0923456789', 'marko.horvat@example.com'),
-    ('Lucija', 'Marić', '1995-05-12', 'Ulica 5, Grad', '0912345678', 'lucija.maric@example.com');
+    ('Martina', 'Vuković', '1978-08-15', 'Trg 1, Grad', '0913456789', 'martina.vukovic@example.com'),
+    ('Ivana', 'Marinović', '1980-11-20', 'Ulica 2, Grad', '0987654321', 'ivana.marinovic@example.com'),
+    ('Stjepan', 'Horvat', '1995-04-05', 'Avenija 3, Grad', '0916789012', 'stjepan.horvat@example.com'),
+    ('Marin', 'Kovačić', '1987-07-10', 'Ulica 4, Grad', '0923456789', 'marin.kovacic@example.com'),
+    ('Katarina', 'Babić', '2000-12-25', 'Trg 5, Grad', '0978901234', 'katarina.babic@example.com');
 
--- 3.Tablica skaldiste--
+-- INSERT podaci za tablicu skladiste
 INSERT INTO skladiste (odjel, naziv_proizvoda, kolicina_proizvoda)
 VALUES 
-    ('Higijenske potrebstine', 'Toaletni papir', 200),
-    ('Hrana', 'Riža', 150),
-    ('Piće', 'Voda', 300),
-    ('Higijenske potrebstine', 'Šampon', 100),
-    ('Hrana', 'Tjestenina', 180),
-    ('Piće', 'Gazirani sok', 250),
-    ('Higijenske potrebstine', 'Gel za tuširanje', 150),
-    ('Hrana', 'Konzervirana hrana', 200),
-    ('Piće', 'Vino', 120),
-    ('Higijenske potrebstine', 'Sapun', 180),
-    ('Hrana', 'Meso', 100),
-    ('Piće', 'Pivo', 200),
-    ('Higijenske potrebstine', 'Dezinficijens', 150),
-    ('Hrana', 'Voće', 180),
-    ('Piće', 'Sok od voća', 100),
-    ('Higijenske potrebstine', 'Pelene', 300),
-    ('Hrana', 'Povrće', 150),
-    ('Piće', 'Kava', 180);
+    ('Skladište A', 'Ručnici', 500),
+    ('Skladište B', 'Posteljina', 200),
+    ('Skladište C', 'Čaše', 1000),
+    ('Skladište D', 'Pribor za jelo', 800),
+    ('Skladište E', 'Toaletni papir', 1000);
 
+-- INSERT podaci za tablicu radnik_skladiste
+INSERT INTO radnik_skladiste (id_radnik, id_skladiste, datum_provjere, napomena)
+VALUES 
+    (1, 1, '2023-05-01', 'Provjereno'),
+    (2, 2, '2023-05-01', 'Provjereno'),
+    (3, 3, '2023-05-01', 'Provjereno'),
+    (4, 4, '2023-05-01', 'Provjereno'),
+    (5, 5, '2023-05-01', 'Provjereno');
 
--- 14.Tablica koja povezuje soba-sadrzaj, rezultat odnosa "vise-na-vise" --
-INSERT INTO soba_sadrzaj (id_soba, id_sadrzaj, kolicina) 
-VALUES
-(1, 1, 2),
-(1, 2, 1),
-(2, 3, 3),
-(2, 4, 1),
-(3, 5, 2),
-(3, 6, 2),
-(4, 7, 1),
-(4, 8, 2),
-(5, 9, 3),
-(5, 10, 1),
-(6, 11, 2),
-(6, 12, 1),
-(7, 13, 1),
-(7, 14, 2),
-(8, 15, 2),
-(8, 16, 1),
-(9, 17, 3),
-(9, 18, 1),
-(10, 19, 2),
-(10, 20, 1),
-(11, 21, 2),
-(11, 22, 2),
-(12, 23, 1),
-(12, 24, 2),
-(13, 25, 3),
-(13, 26, 1),
-(14, 27, 2),
-(14, 28, 1),
-(15, 29, 2),
-(15, 30, 1);
+INSERT INTO soba (broj_sobe, tip, opis, cijena_nocenja, id_raspored_ciscenja)
+VALUES 
+    ('101', 'Jednokrevetna', 'Opis sobe 101', 50.00, 1),
+    ('102', 'Jednokrevetna', 'Opis sobe 102', 50.00, 2),
+    ('201', 'Dvokrevetna', 'Opis sobe 201', 80.00, 3),
+    ('202', 'Dvokrevetna', 'Opis sobe 202', 80.00, 4),
+    ('301', 'Apartman', 'Opis apartmana 301', 120.00, 5);
+    
+-- INSERT podaci za tablicu zahtjev_odrzavanja
+INSERT INTO zahtjev_odrzavanja (opis, datum_zahtjeva, stanje, id_soba, id_gost)
+VALUES 
+    ('Zamjena žarulje', '2023-05-02', 'U tijeku', 2, 2),
+    ('Popravak klime', '2023-05-03', 'Završeno', 3, 3),
+    ('Čišćenje ventilacijskih otvora', '2023-05-04', 'Otkazano', 4, 4),
+    ('Promjena posteljine', '2023-05-05', 'U tijeku', 5, 5),
+    ('Popravak brave na vratima', '2023-05-06', 'Završeno', 1, 1);
 
--- 15.Tablica racun --
-INSERT INTO racun (datum, iznos) 
-VALUES
-('2024-01-01', 150.00),
-('2024-01-02', 200.00),
-('2024-01-03', 250.00),
-('2024-01-04', 300.00),
-('2024-01-05', 350.00),
-('2024-01-06', 400.00),
-('2024-01-07', 450.00),
-('2024-01-08', 500.00),
-('2024-01-09', 550.00),
-('2024-01-10', 600.00),
-('2024-01-11', 650.00),
-('2024-01-12', 700.00),
-('2024-01-13', 750.00),
-('2024-01-14', 800.00),
-('2024-01-15', 850.00),
-('2024-01-16', 900.00),
-('2024-01-17', 950.00),
-('2024-01-18', 1000.00),
-('2024-01-19', 1050.00),
-('2024-01-20', 1100.00),
-('2024-01-21', 1150.00),
-('2024-01-22', 1200.00),
-('2024-01-23', 1250.00),
-('2024-01-24', 1300.00),
-('2024-01-25', 1350.00),
-('2024-01-26', 1400.00),
-('2024-01-27', 1450.00),
-('2024-01-28', 1500.00),
-('2024-01-29', 1550.00),
-('2024-01-30', 1600.00);
+-- INSERT podaci za tablicu sadrzaj
+INSERT INTO sadrzaj (naziv, opis)
+VALUES 
+    ('TV', 'Televizor s kabelskim programima'),
+    ('Mini bar', 'Hladnjak s napicima'),
+    ('Klima uređaj', 'Individualno podešavanje temperature'),
+    ('Balkon', 'Privatni balkon s pogledom'),
+    ('Room service', 'Dostava hrane i pića u sobu');
 
--- 16.Tablica rezervacija --
+-- INSERT podaci za tablicu soba_sadrzaj
+INSERT INTO soba_sadrzaj (id_soba, id_sadrzaj, kolicina)
+VALUES 
+    (2, 1, 1),
+    (3, 2, 1),
+    (4, 3, 1),
+    (5, 4, 1),
+    (1, 5, 1);
+
+-- INSERT podaci za tablicu racun
+INSERT INTO racun (datum, iznos)
+VALUES 
+    ('2023-05-11', 150.00),
+    ('2023-05-12', 200.00),
+    ('2023-05-13', 300.00),
+    ('2023-05-14', 100.00),
+    ('2023-05-15', 250.00);
+
+-- INSERT podaci za tablicu rezervacija
 INSERT INTO rezervacija (datum_prijave, datum_odjave, broj_gostiju, id_gost, id_radnik, id_racun)
-VALUES
-('2024-01-01', '2024-01-05', 2, 1, 1, 1),
-('2024-01-02', '2024-01-06', 1, 2, 2, 2),
-('2024-01-03', '2024-01-07', 3, 3, 3, 3),
-('2024-01-04', '2024-01-08', 2, 4, 4, 4),
-('2024-01-05', '2024-01-09', 1, 5, 5, 5),
-('2024-01-06', '2024-01-10', 2, 6, 6, 6),
-('2024-01-07', '2024-01-11', 3, 7, 7, 7),
-('2024-01-08', '2024-01-12', 2, 8, 8, 8),
-('2024-01-09', '2024-01-13', 1, 9, 9, 9),
-('2024-01-10', '2024-01-14', 2, 10, 10, 10),
-('2024-01-11', '2024-01-15', 3, 11, 11, 11),
-('2024-01-12', '2024-01-16', 2, 12, 12, 12),
-('2024-01-13', '2024-01-17', 1, 13, 13, 13),
-('2024-01-14', '2024-01-18', 2, 14, 14, 14),
-('2024-01-15', '2024-01-19', 3, 15, 15, 15),
-('2024-01-16', '2024-01-20', 2, 1, 16, 16),
-('2024-01-17', '2024-01-21', 1, 2, 17, 17),
-('2024-01-18', '2024-01-22', 3, 3, 18, 18),
-('2024-01-19', '2024-01-23', 2, 4, 19, 19),
-('2024-01-20', '2024-01-24', 1, 5, 20, 20),
-('2024-01-21', '2024-01-25', 2, 6, 21, 21),
-('2024-01-22', '2024-01-26', 3, 7, 22, 22),
-('2024-01-23', '2024-01-27', 2, 8, 23, 23),
-('2024-01-24', '2024-01-28', 1, 9, 24, 24),
-('2024-01-25', '2024-01-29', 2, 10, 25, 25),
-('2024-01-26', '2024-01-30', 3, 11, 26, 26),
-('2024-01-27', '2024-01-31', 2, 12, 27, 27),
-('2024-01-28', '2024-02-01', 1, 13, 28, 28),
-('2024-01-29', '2024-02-02', 2, 14, 29, 29),
-('2024-01-30', '2024-02-03', 3, 15, 30, 30);
+VALUES 
+    ('2023-05-02', '2023-05-05', 2, 2, 2, 2),
+    ('2023-05-03', '2023-05-06', 1, 3, 3, 3),
+    ('2023-05-04', '2023-05-07', 3, 4, 4, 4),
+    ('2023-05-05', '2023-05-08', 2, 5, 5, 5),
+    ('2023-05-06', '2023-05-09', 1, 1, 1, 1);
 
--- 17.Tablica recenzija --
+-- INSERT podaci za tablicu recenzija
 INSERT INTO recenzija (datum, ocjena, komentar, id_gost, id_rezervacija)
-VALUES
-('2024-01-01', '4', 'Odličan boravak, sve je bilo čisto i uredno.', 1, 1),
-('2024-01-01', '5', 'Fantastično iskustvo! Sve pohvale osoblju.', 2, 2),
-('2024-01-03', '3', 'Soba je bila prilično bučna, ali inače sve ok.', 3, 3),
-('2024-01-04', '4', 'Vrlo ljubazno osoblje, ali soba je bila malo premala.', 4, 4),
-('2024-01-10', '5', 'Savršeno! Sve je bilo izvrsno.', 5, 5),
-('2024-01-06', '4', 'Ugodan boravak, ali doručak bi mogao biti bolji.', 6, 6),
-('2024-02-13', '2', 'Nisam bio zadovoljan čistoćom sobe.', 7, 7),
-('2024-02-08', '5', 'Sve je bilo savršeno, definitivno se vraćam.', 8, 8),
-('2024-02-15', '3', 'Osoblje je bilo ljubazno, ali usluga u restoranu spora.', 9, 9),
-('2024-02-01', '4', 'Dobra lokacija i udoban krevet.', 10, 10),
-('2024-02-01', '4', 'Soba je bila čista, ali klima uređaj nije dobro radio.', 11, 11),
-('2024-02-12', '5', 'Savršen smještaj za poslovno putovanje.', 12, 12),
-('2024-03-15', '3', 'Prostrana soba, ali loša izolacija od buke.', 13, 13),
-('2024-03-20', '4', 'Prijatan boravak, ali doručak bi mogao biti raznovrsniji.', 14, 14),
-('2024-03-26', '5', 'Vrlo ljubazno osoblje, brza usluga.', 15, 15),
-('2024-03-02', '4', 'Sve je bilo super, ali doručak je mogao biti bolji.', 1, 16),
-('2024-03-05', '5', 'Prekrasan pogled iz sobe, odlična usluga.', 2, 17),
-('2024-03-12', '3', 'Soba je bila prilično malena za troje ljudi.', 3, 18),
-('2024-04-18', '4', 'Osoblje je bilo vrlo ljubazno i susretljivo.', 4, 19),
-('2024-04-28', '5', 'Savršen odmor, sve pohvale za hotel.', 5, 20),
-('2024-04-05', '4', 'Udoban krevet i čista soba, ali cijene u restoranu su previsoke.', 6, 21),
-('2024-04-12', '3', 'Nisam bio zadovoljan kvalitetom hrane.', 7, 22),
-('2024-04-19', '5', 'Fantastičan boravak, svakako preporučujem.', 8, 23),
-('2024-04-25', '4', 'Lokacija hotela je izvrsna, blizu centra grada.', 9, 24),
-('2024-05-03', '3', 'Prostrana soba, ali loša izolacija od buke.', 10, 25),
-('2024-05-08', '5', 'Osoblje je bilo izuzetno susretljivo i uslužno.', 11, 26),
-('2024-05-14', '4', 'Sve je bilo super, ali internet konekcija je bila spora.', 12, 27),
-('2024-05-20', '3', 'Doručak nije bio tako raznovrstan kako sam očekivao.', 13, 28),
-('2024-05-25', '5', 'Savršen smještaj za odmor, definitivno se vraćamo.', 14, 29),
-('2024-05-26', '4', 'Vrlo čisto i uredno, osoblje vrlo ljubazno.', 15, 30);
+VALUES 
+    ('2023-05-06', 4, 'Sveukupno dobro iskustvo.', 2, 1),
+    ('2023-05-07', 5, 'Savršeno osoblje i čistoća.', 3, 2),
+    ('2023-05-08', 3, 'Potrebna obnova nekih prostorija.', 4, 3),
+    ('2023-05-09', 4, 'Udoban boravak, ali skuplje usluge.', 5, 4),
+    ('2023-05-10', 5, 'Sve pohvale, nadmašili su očekivanja.', 1, 5);
+    
+-- INSERT podaci za tablicu usluge
+INSERT INTO usluge (naziv, opis, cijena)
+VALUES 
+    ('Wellness centar', 'Ponuda različitih tretmana i masaža.', 80.00),
+    ('Doručak', 'Buffet doručak s raznovrsnim jelima.', 15.00),
+    ('Prijevoz do zračne luke', 'Udoban prijevoz do zračne luke.', 50.00),
+    ('Rent-a-car', 'Iznajmljivanje automobila za razgledavanje grada.', 70.00),
+    ('Bazen', 'Vanjski bazen s ležaljkama i pool barom.', 20.00);
 
--- 18.Tablica usluge --
-INSERT INTO usluge (naziv, opis, cijena) 
-VALUES
-('Doručak', 'Standardni doručak s raznovrsnim izborom.', 15.00),
-('Ručak', 'Ručak s dnevnim jelovnikom.', 20.00),
-('Večera', 'Večera s bogatim izborom jela.', 25.00),
-('Wi-Fi', 'Brza internet veza dostupna u cijelom objektu.', 0.00),
-('Wellness centar', 'Pristup wellness centru s saunom i bazenom.', 30.00),
-('Fitness centar', 'Pristup fitness centru s modernom opremom.', 25.00),
-('Parkiralište', 'Parkirno mjesto dostupno gostima hotela.', 10.00),
-('Sobe za sastanke', 'Prostor za održavanje poslovnih sastanaka.', 50.00),
-('Sobe za evente', 'Prostor za organizaciju posebnih događanja.', 100.00),
-('Dječje igralište', 'Igralište za djecu unutar hotelskog kompleksa.', 0.00),
-('Prijevoz do zračne luke', 'Organiziran prijevoz do zračne luke.', 35.00),
-('Praonica rublja', 'Usluga pranja i glačanja rublja.', 15.00),
-('Room service', 'Usluga dostave hrane i pića u sobu.', 5.00),
-('Turistički izleti', 'Organizirani izleti i obilasci znamenitosti.', 40.00),
-('Rent-a-car', 'Mogućnost najma automobila na recepciji.', 50.00),
-('Spa tretmani', 'Razni spa tretmani i masaže.', 40.00),
-('Bicikli na najam', 'Najam bicikala za istraživanje okolice.', 10.00),
-('Vođene šetnje', 'Vođene šetnje po lokalnim atrakcijama.', 15.00),
-('Kućni ljubimci', 'Dopušten boravak kućnih ljubimaca.', 20.00),
-('Roštilj večera', 'Organizirane roštilj večere u hotelu.', 30.00),
-('Sobe s pogledom', 'Sobe s prekrasnim pogledom na okolicu.', 20.00),
-('Dnevni boravak', 'Mogućnost produženog boravka.', 50.00),
-('Kava i čaj', 'Neograničena konzumacija kave i čaja.', 5.00),
-('TV usluga', 'Pristup TV programima u sobi.', 0.00),
-('Minibar', 'Napitci i grickalice dostupni u sobi.', 10.00),
-('Dječji krevetić', 'Dječji krevetić na zahtjev.', 10.00),
-('Radna soba', 'Soba prilagođena za rad.', 20.00),
-('Poslovni kutak', 'Poslovni kutak s računalom i printerom.', 10.00),
-('Sef u sobi', 'Sef za sigurno čuvanje vrijednih predmeta.', 5.00);
+-- INSERT podaci za tablicu vrsta_placanja
+INSERT INTO vrsta_placanja (nacin_placanja)
+VALUES 
+    ('Gotovina'),
+    ('Kreditna kartica'),
+    ('Debitna kartica'),
+    ('Kripto valute');
 
--- 19.Tablica koja povezuje racun-usluge, rezultat odnosa "vise-na-vise" --
-INSERT INTO racun_usluge (id_racun, id_usluga, kolicina)
-VALUES
-(1, 1, 2),
-(1, 2, 1),
-(2, 3, 3),
-(2, 4, 1),
-(3, 5, 2),
-(3, 6, 2),
-(4, 7, 1),
-(4, 8, 2),
-(5, 9, 3),
-(5, 10, 1),
-(6, 11, 2),
-(6, 12, 1),
-(7, 13, 1),
-(7, 14, 2),
-(8, 15, 2),
-(8, 16, 1),
-(9, 17, 3),
-(9, 18, 1),
-(10, 19, 2),
-(10, 20, 1),
-(11, 21, 2),
-(11, 22, 2),
-(12, 23, 1),
-(12, 24, 2),
-(13, 25, 3),
-(13, 26, 1),
-(14, 27, 2),
-(14, 28, 1),
-(15, 29, 2),
-(15, 30, 1);
-
--- 20.Tablica vrsta_placanja --
-INSERT INTO vrsta_placanja (nacin_placanja) 
-VALUES
-('Gotovina'),
-('Kreditna kartica'),
-('Debitna kartica'),
-('Kripto valute'),
-('Gotovina'),
-('Kreditna kartica'),
-('Debitna kartica'),
-('Kripto valute'),
-('Gotovina'),
-('Kreditna kartica'),
-('Debitna kartica'),
-('Kripto valute'),
-('Gotovina'),
-('Kreditna kartica'),
-('Debitna kartica'),
-('Kripto valute'),
-('Gotovina'),
-('Kreditna kartica'),
-('Debitna kartica'),
-('Kripto valute'),
-('Gotovina'),
-('Kreditna kartica'),
-('Debitna kartica'),
-('Kripto valute'),
-('Gotovina'),
-('Kreditna kartica'),
-('Debitna kartica'),
-('Kripto valute'),
-('Gotovina'),
-('Kreditna kartica'),
-('Debitna kartica');
-
--- 21.Tablica restoran --
+-- INSERT podaci za tablicu restoran
 INSERT INTO restoran (ime, tip, lokacija, radno_vrijeme)
-VALUES
-('Restoran Aroma', 'Restoran', 'Vukovarska ul. 207, 10000 Zagreb', '08:00 - 22:00'),
-('Restoran Mundoaka', 'Restoran', 'Petrinjska ul. 2, 10000 Zagreb', '09:00 - 23:00'),
-('Bistro Fajn', 'Bistro', 'Vlaška ul. 78, 10000 Zagreb', '07:00 - 21:00'),
-('Trattoria Canteen', 'Trattoria', 'Teslina ul. 14, 10000 Zagreb', '10:00 - 20:00'),
-('La Struk', 'Restoran', 'Martićeva ul. 63, 10000 Zagreb', '08:30 - 22:30'),
-('Bistro Apetit', 'Bistro', 'Vlaška ul. 34, 10000 Zagreb', '07:00 - 22:00'),
-('Konoba Didov san', 'Konoba', 'Ilica ul. 53, 10000 Zagreb', '09:00 - 23:00'),
-('Restoran Ivica i Marica', 'Restoran', 'Kralja Držislava 6, 10000 Zagreb', '08:00 - 22:00'),
-('Mama Bistro', 'Bistro', 'Vlaška ul. 63, 10000 Zagreb', '10:00 - 20:00'),
-('Brasserie De l'Europe', 'Brasserie', 'Nikole Tesle 7, 10000 Zagreb', '08:00 - 21:00'),
-('Mundoaka Street Food', 'Restoran', 'Tkalčićeva ul. 26, 10000 Zagreb', '08:30 - 22:30'),
-('Bistro MZ', 'Bistro', 'Vlaška ul. 77, 10000 Zagreb', '07:00 - 22:00'),
-('Lari & Penati', 'Restoran', 'Dežmanova ul. 9, 10000 Zagreb', '09:00 - 23:00'),
-('Kava Tava', 'Restoran', 'Trakošćanska ul. 14, 10000 Zagreb', '08:00 - 22:00'),
-('Okrepčivaonica Nana', 'Okrepčivaonica', 'Vlaška ul. 20, 10000 Zagreb', '10:00 - 20:00'),
-('Sjedni, Jedini', 'Restoran', 'Tomićeva ul. 5, 10000 Zagreb', '08:00 - 21:00'),
-('Bistro Knedla', 'Bistro', 'Vlaška ul. 30, 10000 Zagreb', '08:30 - 22:30'),
-('Konoba Svinjski rep', 'Konoba', 'Ilica ul. 24, 10000 Zagreb', '07:00 - 22:00'),
-('Pizzeria Kerempuh', 'Pizzeria', 'Ilica ul. 31, 10000 Zagreb', '09:00 - 23:00'),
-('Burger Bar', 'Restoran', 'Vlaška ul. 54, 10000 Zagreb', '08:00 - 22:00'),
-('Umami', 'Restoran', 'Savska cesta 182, 10000 Zagreb', '10:00 - 20:00'),
-('Bistro Tesla', 'Bistro', 'Vlaška ul. 28, 10000 Zagreb', '08:00 - 21:00'),
-('Gostionica Vinodol', 'Gostionica', 'Nikole Tesle 10, 10000 Zagreb', '08:30 - 22:30'),
-('Špajza', 'Restoran', 'Jurja Žerjavića 7, 10000 Zagreb', '07:00 - 22:00'),
-('Bistro Skroz Dobar', 'Bistro', 'Vlaška ul. 37, 10000 Zagreb', '09:00 - 23:00'),
-('Feniks restoran', 'Restoran', 'Kneza Mislava 1, 10000 Zagreb', '08:00 - 22:00'),
-('Bistro Mačak', 'Bistro', 'Vlaška ul. 80, 10000 Zagreb', '10:00 - 20:00'),
-('Zlatna Školjka', 'Restoran', 'Medulićeva ul. 19, 10000 Zagreb', '08:00 - 21:00'),
-('Gostionica Medvedgrad', 'Gostionica', 'Ilica ul. 49, 10000 Zagreb', '08:30 - 22:30');
+VALUES 
+    ('Restoran B', 'Mediteranski', 'U blizini mora', '10:00-23:00'),
+    ('Restoran C', 'International', 'U centru grada', '07:00-22:00'),
+    ('Restoran D', 'Vegetarijanski', 'U mirnom okruženju', '09:00-21:00'),
+    ('Restoran E', 'Fast food', 'Pokraj parka', '11:00-01:00'),
+    ('Restoran F', 'Gurmanski', 'U sklopu hotela', '08:00-00:00');
 
--- 22.Tablica koja povezuje racun-restoran, rezultat odnosa "vise-na-vise" --
-INSERT INTO racun_restoran (datum, cijena, id_restoran) 
-VALUES
-('2024-01-01', 120.50, 1),
-('2024-01-02', 95.25, 2),
-('2024-01-03', 150.75, 3),
-('2024-01-04', 75.60, 4),
-('2024-01-05', 200.00, 5),
-('2024-01-06', 110.00, 6),
-('2024-01-07', 80.30, 7),
-('2024-01-08', 175.20, 8),
-('2024-01-09', 90.75, 9),
-('2024-01-10', 130.45, 10),
-('2024-01-11', 100.00, 11),
-('2024-01-12', 140.25, 12),
-('2024-01-13', 65.80, 13),
-('2024-01-14', 180.00, 14),
-('2024-01-15', 95.30, 15),
-('2024-01-16', 120.50, 16),
-('2024-01-17', 95.25, 17),
-('2024-01-18', 150.75, 18),
-('2024-01-19', 75.60, 19),
-('2024-01-20', 200.00, 20),
-('2024-01-21', 110.00, 21),
-('2024-01-22', 80.30, 22),
-('2024-01-23', 175.20, 23),
-('2024-01-24', 90.75, 24),
-('2024-01-25', 130.45, 25),
-('2024-01-26', 100.00, 26),
-('2024-01-27', 140.25, 27),
-('2024-01-28', 65.80, 28),
-('2024-01-29', 180.00, 29),
-('2024-01-30', 95.30, 30);
+-- INSERT podaci za tablicu racun_restoran
+INSERT INTO racun_restoran (datum, cijena, id_restoran)
+VALUES 
+    ('2023-05-11', 120.00, 2),
+    ('2023-05-12', 150.00, 3),
+    ('2023-05-13', 180.00, 4),
+    ('2023-05-14', 90.00, 5),
+    ('2023-05-15', 200.00, 1);
 
--- 23.Tablica koja povezuje gost-restoran, rezultat odnosa "vise-na-vise" --
-INSERT INTO gost_restoran (id_gost, id_restoran, stanje) 
-VALUES
-(1, 1, 'Aktivan'),
-(2, 2, 'Aktivan'),
-(3, 3, 'Aktivan'),
-(4, 4, 'Aktivan'),
-(5, 5, 'Aktivan'),
-(6, 6, 'Neaktivan'),
-(7, 7, 'Neaktivan'),
-(8, 8, 'Aktivan'),
-(9, 9, 'Aktivan'),
-(10, 10, 'Aktivan'),
-(11, 11, 'Aktivan'),
-(12, 12, 'Neaktivan'),
-(13, 13, 'Aktivan'),
-(14, 14, 'Neaktivan'),
-(15, 15, 'Aktivan'),
-(1, 16, 'Aktivan'),
-(2, 17, 'Aktivan'),
-(3, 18, 'Aktivan'),
-(4, 19, 'Aktivan'),
-(5, 20, 'Aktivan'),
-(6, 21, 'Neaktivan'),
-(7, 22, 'Neaktivan'),
-(8, 23, 'Aktivan'),
-(9, 24, 'Aktivan'),
-(10, 25, 'Aktivan'),
-(11, 26, 'Aktivan'),
-(12, 27, 'Neaktivan'),
-(13, 28, 'Aktivan'),
-(14, 29, 'Neaktivan'),
-(15, 30, 'Aktivan');
+-- INSERT podaci za tablicu gost_restoran
+INSERT INTO gost_restoran (id_gost, id_restoran, datum)
+VALUES 
+    (2, 3, '2023-05-11'),
+    (3, 4, '2023-05-12'),
+    (4, 5, '2023-05-13'),
+    (5, 1, '2023-05-14'),
+    (1, 2, '2023-05-15');
 
--- 24.Tablica koja racun-vrsta_placanja, rezultat odnosa "vise-na-vise" --
+-- INSERT podaci za tablicu racun_vrsta_placanja
 INSERT INTO racun_vrsta_placanja (id_racun, id_placanje)
-VALUES
-(1, 1),
-(2, 2),
-(3, 3),
-(4, 4),
-(5, 5),
-(6, 6),
-(7, 7),
-(8, 8),
-(9, 9),
-(10, 10),
-(11, 11),
-(12, 12),
-(13, 13),
-(14, 14),
-(15, 15),
-(1, 16),
-(2, 17),
-(3, 18),
-(4, 19),
-(5, 20),
-(6, 21),
-(7, 22),
-(8, 23),
-(9, 24),
-(10, 25),
-(11, 26),
-(12, 27),
-(13, 28),
-(14, 29),
-(15, 30);
+VALUES 
+    (1, 2),
+    (2, 3),
+    (3, 1),
+    (4, 4),
+    (5, 2);
+    
+INSERT INTO radnik_raspored_ciscenja (id_radnik, id_raspored_ciscenja)
+VALUES 
+    (2, 1),
+    (3, 1),
+    (4, 1),
+    (5, 1),
+    (1, 1);
+    
+   
