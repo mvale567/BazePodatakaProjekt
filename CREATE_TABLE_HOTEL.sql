@@ -211,10 +211,6 @@ CREATE TABLE soba_sadrzaj (
 #INSERT INTO soba_sadrzaj (id_soba, id_sadrzaj, kolicina)
 #    VALUES (1, 1, 1);
     
-    
-
-    
-
 
 
 -- 17.Tablica recenzija --
@@ -246,7 +242,7 @@ CREATE TABLE usluge (
 -- 19.Tablica koja povezuje racun-usluge, rezultat odnosa "vise-na-vise" --
 CREATE TABLE racun_usluge (
     id_racun INT NOT NULL,
-    id_usluga INT NOT NULL,
+    id_usluga INT,
     PRIMARY KEY (id_racun, id_usluga),
     FOREIGN KEY (id_racun) REFERENCES racun(id),
     FOREIGN KEY (id_usluga) REFERENCES usluge(id)
