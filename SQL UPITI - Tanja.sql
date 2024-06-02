@@ -22,17 +22,6 @@ WHERE stanje='Nije završeno';
 
 -- KRAJ UPITA 2
 
--- UPIT 3
-
-CREATE VIEW pregled_smjena_radnika AS
-SELECT r.ime, r.prezime, s.naziv AS smjena
-FROM radnik r
-JOIN radnik_smjena_radnika rs ON r.id = rs.id_radnik
-JOIN smjena_radnika s ON rs.id_smjena = s.id;
-
-
--- KRAJ UPITA 3
-
 /*Šef recepcije zatražio je evidenciju je li očišćena soba 101. 
 To je napravljeno na sljedeći naćin: 
 Koristimo atribute iz tablica soba i raspored_ciscenja kako bi kreirali pogled pregled_soba_ciscenja koji sadrži podatke o broju sobe, datumu i stanju čišćenja. Korištenjem operatora INNER JOIN, CREATE VIEW, SELECT i WHERE, upit omogućava filtriranje i dohvaćanje specifičnih informacija, poput provjere je li soba 101 očišćena.
