@@ -80,7 +80,13 @@ FROM raspored_ciscenja rc
 INNER JOIN soba s ON rc.id = s.id_raspored_ciscenja
 LEFT JOIN radnik_raspored_ciscenja rrc ON rc.id = rrc.id_raspored_ciscenja
 LEFT JOIN radnik r ON rrc.id_radnik = r.id
-LEFT JOIN radno_mjesto rm ON r.id_radno_mjesto = rm.id;
+LEFT JOIN radno_mjesto rm ON r.id_radno_mjesto = rm.id 
+WHERE rm.naziv = 'Čistać';
+
+
+
+
+
 
 SELECT rc.datum, CONCAT(r.ime, ' ', r.prezime) AS radnik, s.broj_sobe
 FROM raspored_ciscenja rc
@@ -93,3 +99,10 @@ SELECT radnik.id, raspored_ciscenja.id
 FROM radnik
 JOIN radno_mjesto ON radnik.id_radno_mjesto = radno_mjesto.id
 JOIN raspored_ciscenja ON radno_mjesto.odjel = 'Odrzavanje';
+
+
+SELECT r.ime, r.prezime, s.naziv
+FROM radnik_smjena_radnika AS rs
+JOIN smjena_radnika AS s ON rs.id_smjena = s.id
+JOIN radnik AS r ON rs.id_radnik = r.id
+WHERE s.naziv = 'Jutarnja smjena';
