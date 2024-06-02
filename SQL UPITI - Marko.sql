@@ -101,8 +101,47 @@ JOIN radno_mjesto ON radnik.id_radno_mjesto = radno_mjesto.id
 JOIN raspored_ciscenja ON radno_mjesto.odjel = 'Odrzavanje';
 
 
-SELECT r.ime, r.prezime, s.naziv
-FROM radnik_smjena_radnika AS rs
-JOIN smjena_radnika AS s ON rs.id_smjena = s.id
-JOIN radnik AS r ON rs.id_radnik = r.id
-WHERE s.naziv = 'Jutarnja smjena';
+
+
+
+
+CREATE VIEW prosjecni_iznos_racuna_restoran AS
+SELECT AVG(cijena) AS prosjecni_iznos
+FROM racun_restoran;
+
+SELECT * FROM prosjecni_iznos_racuna_restoran;
+
+
+
+SELECT s.broj_sobe, AVG(r.ocjena) AS prosjecna_ocjena
+FROM soba AS s
+JOIN recenzija AS r ON s.id = r.id_rezervacija
+GROUP BY s.broj_sobe
+ORDER BY prosjecna_ocjena DESC
+LIMIT 5;
+
+
+
+
+
+
+SELECT 
+    g.id AS 'ID Gosta',
+    CONCAT(g.ime, ' ', g.prezime) AS 'Ime i Prezime Gosta',
+    r.id AS 'ID Racuna',
+    r.datum AS 'Datum Racuna',
+    r.iznos AS 'Iznos Racuna',
+    u.naziv AS 'Naziv Usluge',
+    u.cijena AS 'Cijena Usluge'
+FROM 
+    gost AS g
+JOIN 
+    rezervacija AS re ON g.id = re.id_gost
+JOIN 
+    racun AS r ON re.id_racun = r.id
+LEFT JOIN 
+    racun_usluge AS ru ON r.id = ru.id_racun
+LEFT JOIN 
+    usluge AS u ON ru.id_usluga = u.id;
+
+SELECT * FROM skladiste_dobavljac;
