@@ -132,8 +132,31 @@ CREATE TABLE radnik_smjena_radnika (
 );
 # INSERT INTO radnik_smjena_radnika (id_radnik, id_smjena, datum)
 #    VALUES (1, 1, '2023-05-01');
-    
 
+-- 15.Tablica racun --
+CREATE TABLE racun (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    datum DATE NOT NULL,
+    iznos DECIMAL(10, 2) DEFAULT 0.00 NOT NULL
+);
+#INSERT INTO racun (datum, iznos)
+#   VALUES ('2023-05-10', 500.00);
+
+-- 16.Tablica rezervacija --
+CREATE TABLE rezervacija (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    datum_prijave DATE NOT NULL,
+    datum_odjave DATE NOT NULL,
+    broj_gostiju INT NOT NULL,
+    id_gost INT NOT NULL,
+    id_radnik INT NOT NULL,
+    id_racun INT NOT NULL,
+    FOREIGN KEY (id_gost) REFERENCES gost(id),
+    FOREIGN KEY (id_radnik) REFERENCES radnik(id),
+    FOREIGN KEY (id_racun) REFERENCES racun(id)
+);
+#INSERT INTO rezervacija (datum_prijave, datum_odjave, broj_gostiju, id_gost, id_radnik, id_racun)
+#    VALUES ('2023-05-01', '2023-05-10', 2, 1, 1, 1);
 
 -- 11.Tablica soba --
 CREATE TABLE soba (
@@ -143,9 +166,11 @@ CREATE TABLE soba (
     opis TEXT,
     cijena_nocenja DECIMAL(10, 2) CHECK (cijena_nocenja >= 0),
     id_raspored_ciscenja INT NOT NULL,
-    FOREIGN KEY (id_raspored_ciscenja) REFERENCES raspored_ciscenja(id)
+    id_rezervacija INT NOT NULL,
+    FOREIGN KEY (id_raspored_ciscenja) REFERENCES raspored_ciscenja(id),
+    FOREIGN KEY (id_rezervacija) REFERENCES rezervacija(id)
 );
-#INSERT INTO soba (broj_sobe, tip, opis, cijena_nocenja, id_raspored_ciscenja)
+#INSERT INTO soba (broj_sobe, tip, opis, cijena_nocenja, id_raspored_ciscenja, id_rezervacija)
 #    VALUES (101, 'Jednokrevetna', 'Opis sobe', 50.00, 1);
 
 
@@ -187,30 +212,9 @@ CREATE TABLE soba_sadrzaj (
 #    VALUES (1, 1, 1);
     
     
--- 15.Tablica racun --
-CREATE TABLE racun (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    datum DATE NOT NULL,
-    iznos DECIMAL(10, 2) DEFAULT 0.00 NOT NULL
-);
-#INSERT INTO racun (datum, iznos)
-#   VALUES ('2023-05-10', 500.00);
+
     
--- 16.Tablica rezervacija --
-CREATE TABLE rezervacija (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    datum_prijave DATE NOT NULL,
-    datum_odjave DATE NOT NULL,
-    broj_gostiju INT NOT NULL,
-    id_gost INT NOT NULL,
-    id_radnik INT NOT NULL,
-    id_racun INT NOT NULL,
-    FOREIGN KEY (id_gost) REFERENCES gost(id),
-    FOREIGN KEY (id_radnik) REFERENCES radnik(id),
-    FOREIGN KEY (id_racun) REFERENCES racun(id)
-);
-#INSERT INTO rezervacija (datum_prijave, datum_odjave, broj_gostiju, id_gost, id_radnik, id_racun)
-#    VALUES ('2023-05-01', '2023-05-10', 2, 1, 1, 1);
+
 
 
 -- 17.Tablica recenzija --
