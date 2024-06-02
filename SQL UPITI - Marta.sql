@@ -5,14 +5,16 @@ USE hotel;
 CREATE VIEW kontakt_dobavljaci AS
 SELECT d.naziv, d.email, s.naziv_proizvoda AS naziv_robe
 FROM dobavljac AS d
-JOIN skladiste AS s ON d.id = s.id
-WHERE s.naziv_proizvoda LIKE 'Toneri%';
+JOIN skladiste_dobavljac AS sd ON d.id = sd.id_dobavljac
+JOIN skladiste AS s ON s.id = sd.id_skladiste
+WHERE s.naziv_proizvoda LIKE 'Toner%';
 
 CREATE VIEW provjera_stanja AS
-SELECT r.ime, r.prezime, rs.napomena
+SELECT r.ime, r.prezime, rs.napomena, rs.datum_provjere
 FROM radnik AS r
 JOIN radnik_skladiste AS rs ON r.id = rs.id_radnik
-WHERE rs.napomena LIKE '%toner%';
+WHERE rs.napomena LIKE '%toner%'
+ORDER BY rs.datum_provjere DESC;
 
 SELECT CONCAT(ps.ime, " ", ps.prezime) AS narucitelj, kd.naziv AS naziv_dobavljaca, kd.email, kd.naziv_robe
 FROM provjera_stanja AS ps
@@ -23,20 +25,20 @@ CROSS JOIN kontakt_dobavljaci AS kd;
 CREATE VIEW preostali_radnici AS
 SELECT *
 FROM radnik
-WHERE ime NOT LIKE 'Lidija' AND prezime NOT LIKE 'Perić' AND id=28;
+WHERE ime NOT LIKE 'Marta' AND prezime NOT LIKE 'Kralj' AND id!=10;
 
 SELECT id
 FROM radnik
-WHERE ime LIKE 'Lidija' AND prezime LIKE 'Perić';
+WHERE ime LIKE 'Marta' AND prezime LIKE 'Kralj';
 -- KRAJ UPITA 2
 
 -- UPIT 3
-CREATE VIEW racun_Ana_Anković AS
+CREATE VIEW racun_Ivana_Marinović AS
 SELECT CONCAT(g.ime, " ", g.prezime) AS platitelj, s.broj_sobe, s.cijena_nocenja, DATEDIFF(rez.datum_odjave, rez.datum_prijave) AS broj_dana, s.cijena_nocenja*DATEDIFF(rez.datum_odjave, rez.datum_prijave)  AS ukupno 
 FROM rezervacija AS rez
 JOIN gost AS g ON rez.id=g.id
 CROSS JOIN soba AS s 
-WHERE g.ime LIKE 'Ana' AND g.prezime LIKE 'Anković' AND s.id=3;
+WHERE g.ime LIKE 'Ivana' AND g.prezime LIKE 'Marinović' AND s.id=2;
 -- KRAJ UPITA 3
 
 -- UPIT 4 (koliko je preostalo proizvoda, dobavljač i kontakt)
@@ -144,3 +146,4 @@ FROM soba
 GROUP BY tip
 ORDER BY broj_soba DESC;
 -- KRAJ UPITA 10
+
