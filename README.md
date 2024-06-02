@@ -2,22 +2,22 @@ U ovom repozitoriju se nalaze sve datoteke, koje smo koristili kroz izradu proje
 Glavni dokumenti koji su potrebni za pregled našeg projekta su:
 
 Kreiranje baze:
-CREATE_TABLE_HOTEL SQL FILE
-INSERT_INTO_DATA SQL FILE
+CREATE_TABLE_HOTEL SQL FILE,
+INSERT_INTO_DATA SQL FILE,
 
 Kreiranje upita:
-SQL Upiti - Marko
-SQL Upiti - Marta
-SQL upiti - Iva
-SQL Upiti - Lea
-SQL Upiti - Tanja
+SQL Upiti - Marko,
+SQL Upiti - Marta,
+SQL upiti - Iva,
+SQL Upiti - Lea,
+SQL Upiti - Tanja,
 
 Dokumentacija:
-DOKUMENTACIJA-TIM-5 PDF FILE
-EER_dijagram PNG FILE
-ERD_dijagram PNG FILE
-Tim-t_Izvjesce PDF FILE
-Veze između entiteta PDF FILE
+DOKUMENTACIJA-TIM-5 PDF FILE,
+EER_dijagram PNG FILE,
+ERD_dijagram PNG FILE,
+Tim-t_Izvjesce PDF FILE,
+Veze između entiteta PDF FILE,
 
 
 
