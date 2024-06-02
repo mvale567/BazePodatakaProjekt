@@ -23,7 +23,7 @@ WHERE stanje='Nije završeno';
 -- KRAJ UPITA 2
 
 /*Šef recepcije zatražio je evidenciju je li očišćena soba 101. 
-To je napravljeno na sljedeći naćin: 
+To je napravljeno na sljedeći način: 
 Koristimo atribute iz tablica soba i raspored_ciscenja kako bi kreirali pogled pregled_soba_ciscenja koji sadrži podatke o broju sobe, datumu i stanju čišćenja. Korištenjem operatora INNER JOIN, CREATE VIEW, SELECT i WHERE, upit omogućava filtriranje i dohvaćanje specifičnih informacija, poput provjere je li soba 101 očišćena.
 Kreirali smo pogled pregled_soba_ciscenja:
           
@@ -45,7 +45,7 @@ Ovaj upit vraća broj sobe i njen status čišćenja.
 --Kraj upita 1
 
 /*Upit 2 - Šef recepcije zatražio je evidenciju koje sve sobe nisu očišćene. 
-To je napravljeno na sljedeći naćin: Koristimo atribute iz tablica soba i raspored_ciscenja kako bi kreirali pogled pregled_soba_ciscenja koji sadrži podatke o broju sobe, datumu i stanju čišćenja. Korištenjem operatora INNER JOIN, CREATE VIEW, SELECT i WHERE, upit omogućava filtriranje i dohvaćanje specifičnih informacija, poput provjere koje sobe nisu očišćene.
+To je napravljeno na sljedeći način: Koristimo atribute iz tablica soba i raspored_ciscenja kako bi kreirali pogled pregled_soba_ciscenja koji sadrži podatke o broju sobe, datumu i stanju čišćenja. Korištenjem operatora INNER JOIN, CREATE VIEW, SELECT i WHERE, upit omogućava filtriranje i dohvaćanje specifičnih informacija, poput provjere koje sobe nisu očišćene.
 Kreirali smo pogled pregled_soba_ciscenja:
           
 CREATE VIEW pregled_soba_ciscenja AS
