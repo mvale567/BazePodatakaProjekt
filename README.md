@@ -1,6 +1,6 @@
 YOUTUBE - https://www.youtube.com/watch?v=PEomEs7an1w (MARKO, MARTA, TANJA)
 
-YOTUBE - https://www.youtube.com/watch?v=y5fVJ1QEazw (Drugi video sa naknadno dodanim dijelovima videa, + LEA, IVA)
+YOTUBE - https://www.youtube.com/watch?v=y5fVJ1QEazw (Drugi video, naknadno dodano, + LEA, IVA)
 
 
 U ovom repozitoriju se nalaze sve datoteke, koje smo koristili kroz izradu projekta.
